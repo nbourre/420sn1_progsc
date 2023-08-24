@@ -92,18 +92,20 @@ Chaque séance d'une heure se concentre sur des concepts spécifiques et propose
 - La programmation est un moyen de donner des instructions à un ordinateur pour résoudre des problèmes.
 - Thonny est un environnement de développement Python qui facilite l'écriture, l'exécution et le débogage de code.
 
-Voici une capture d'écran de Thonny avec un peu de code.
+Voici une capture d'écran de Thonny avec un peu de code. Prenez quelques instants pour regarder l'interface et les différents éléments.
 
 ![Thonny avec un peu de code](img/99_thonny_pv_nrt.png?raw=true "Thonny avec un peu de code")
 
 Vous reconnaissez probablement la formule ci-dessus soit la loi sur les gaz parfaits. Plus tard, nous allons utiliser cette formule pour faire des calculs simples.
 
 ### Installation de Thonny
-Pour l'installation de Thonny, vous pouvez suivre les instructions sur le site officiel : https://thonny.org/
+Pour l'installation de Thonny, on doit tout d'abord le télécharger sur le site officiel : https://thonny.org/
 
 Il n'est pas nécessaire d'être administrateur pour installer Thonny. Vous pouvez donc l'installer sur votre ordinateur personnel.
 
 > **Note :** L'installateur est en anglais, mais l'interface de Thonny est disponible en français. Lors de la première exécution, l'outil vous demandera de choisir la langue de l'interface.
+
+{% include youtube.html id="jYAvJqxHs5" %}
 
 <video src="https://www.youtube.com/watch?v=jYAvJqxHs5E"></video>
 
