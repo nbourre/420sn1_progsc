@@ -105,7 +105,7 @@ Il n'est pas nécessaire d'être administrateur pour installer Thonny. Vous pouv
 
 > **Note :** L'installateur est en anglais, mais l'interface de Thonny est disponible en français. Lors de la première exécution, l'outil vous demandera de choisir la langue de l'interface.
 
-<video src="https://www.youtube.com/watch?v=jYAvJqxHs5E" />
+<video src="https://www.youtube.com/watch?v=jYAvJqxHs5E"></video>
 
 ![Installer Thonny](https://www.youtube.com/watch?v=jYAvJqxHs5E)
 
