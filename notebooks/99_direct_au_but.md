@@ -26,6 +26,7 @@
   - [Révision des concepts abordés dans la première séance](#révision-des-concepts-abordés-dans-la-première-séance)
   - [Structures de contrôle de flux](#structures-de-contrôle-de-flux)
     - [Opérateurs de comparaison](#opérateurs-de-comparaison)
+      - [Table de vérité](#table-de-vérité)
   - [Boucles](#boucles)
 
 # Introduction
@@ -637,6 +638,19 @@ if age >= 18 and ami:
 else:
     print("On reste à la maison")
 ```
+
+#### Table de vérité 
+Voici un petit rappel de la table de vérité pour les opérateurs logiques `and` et `or` :
+
+| `a`  | `b`  | `a and b` | `a or b` |
+| :--: | :--: | :-------: | :------: |
+| `T`  | `T`  |    `T`    |   `T`    |
+| `T`  | `F`  |    `F`    |   `T`    |
+| `F`  | `T`  |    `F`    |   `T`    |
+| `F`  | `F`  |    `F`    |   `F`    |
+
+En résumé pour le `ET`, il faut que les deux conditions soient vrai pour que l'expression soit vrai. Pour le `OU`, il faut qu'au moins une des conditions soit vrai pour que l'expression soit vrai.
+
 
 // TODO: Ajouter des exemples avec des fonctions qui ont des paramètres optionnels.
 
