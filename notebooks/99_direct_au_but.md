@@ -8,8 +8,8 @@
   - [Plan de leçon 2 : Contrôle de flux et boucles](#plan-de-leçon-2--contrôle-de-flux-et-boucles)
   - [Plan de leçon 3 : Fonctions avancées et visualisation avec Matplotlib](#plan-de-leçon-3--fonctions-avancées-et-visualisation-avec-matplotlib)
 - [Leçon 1 : Introduction à la programmation et fonctions de base](#leçon-1--introduction-à-la-programmation-et-fonctions-de-base)
-  - [Objectifs :](#objectifs-)
-  - [Contenu :](#contenu-)
+  - [Objectifs](#objectifs)
+  - [Contenu](#contenu)
   - [Introduction à la programmation et à Thonny - 5 minutes](#introduction-à-la-programmation-et-à-thonny---5-minutes)
     - [Installation de Thonny - 8 minutes](#installation-de-thonny---8-minutes)
     - [Tour d'horizon de Thonny - 10 minutes](#tour-dhorizon-de-thonny---10-minutes)
@@ -21,13 +21,18 @@
     - [Définition de fonctions](#définition-de-fonctions)
     - [Extra : Règles de nomenclatures](#extra--règles-de-nomenclatures)
 - [Leçon 2 : Contrôle de flux et boucles](#leçon-2--contrôle-de-flux-et-boucles)
-  - [Objectifs :](#objectifs--1)
-  - [Contenu :](#contenu--1)
+  - [Objectifs](#objectifs-1)
+  - [Contenu](#contenu-1)
   - [Révision des concepts abordés dans la première séance](#révision-des-concepts-abordés-dans-la-première-séance)
   - [Structures de contrôle de flux](#structures-de-contrôle-de-flux)
     - [Opérateurs de comparaison](#opérateurs-de-comparaison)
       - [Table de vérité](#table-de-vérité)
+    - [Autres exemples](#autres-exemples)
+  - [La valeur **`None`**](#la-valeur-none)
+    - [Exemple d'utilisation de `None`](#exemple-dutilisation-de-none)
   - [Boucles](#boucles)
+    - [Boucle `while`](#boucle-while)
+    - [Boucle `for`](#boucle-for)
 
 # Introduction
 
@@ -77,14 +82,14 @@ Chaque séance d'une heure se concentre sur des concepts spécifiques et propose
 
 **Durée : 1 heure**
 
-## Objectifs :
+## Objectifs
 
 -   Comprendre les concepts fondamentaux de la programmation.
 -   Apprendre à utiliser l'outil de développement Thonny.
 -   Créer des programmes simples pour effectuer des calculs.
 -   Comprendre et créer des fonctions en Python.
 
-## Contenu :
+## Contenu
 
 1.  **Introduction à la programmation et à Thonny**
     -   Présentation de l'interface Thonny.
@@ -495,8 +500,14 @@ Voici un tableau d'exemples valides et non valides :
 
 -   Écrivez une fonction appelée `calculer_surface_carre` qui prend la longueur d'un côté d'un carré en tant que paramètre et renvoie sa surface. Cependant, utilisez la fonction `calculer_surface_rectangle` pour effectuer le calcul.
 
-**Exercice 3 : Fonctions en lien avec votre domaine d'enseignement**
-Écrivez quelques fonctions en lien avec votre domaine d'enseignement. Vous pouvez utiliser les exemples ci-dessus pour vous inspirer.
+
+
+> **Devoir : Fonctions en lien avec votre domaine d'enseignement** <br />
+> Quelle serait un cours sans devoir! Voici votre devoir :<br />
+> 1. Écrivez quelques fonctions en lien avec votre domaine d'enseignement. Vous pouvez utiliser les exemples ci-dessus pour vous inspirer.<br />
+> 2. Dans le prochain cours, nous allons voir les boucles. Pensez à des situations où vous aimeriez voir des calculs variant selon des paramètres. Par exemple, en physique, on peut calculer la vitesse finale d'un objet en chute libre en fonction de la hauteur de départ. Vous pouvez aussi trouver des situations où vous aimeriez voir des graphiques. Par exemple, en chimie, on peut tracer un graphique de la concentration d'une solution en fonction du temps.<br />
+> 
+> Vous pouvez me contacter via Teams pour regarder votre code et répondre à vos questions.
 
 * * *
 
@@ -504,23 +515,25 @@ Voici un tableau d'exemples valides et non valides :
 
 **Durée : 1 heure**
 
-## Objectifs :
+## Objectifs
 
 -   Réviser les concepts abordés dans la première séance.
 -   Apprendre à utiliser les structures de contrôle de flux.
+-   Apprendre à utiliser la valeur `None`
 -   Apprendre à utiliser les boucles.
 -   Apprendre à utiliser Thonny pour déboguer les erreurs.
 -   Créer des programmes avec des structures de contrôle et des boucles.
 
-## Contenu :
+## Contenu
 
 1.  **Bref retour sur les concepts abordés dans la première séance**
     -   Variables et types de données (entiers, flottants, chaînes de caractères).
     -   Opérations mathématiques en Python.
     -   Définition de fonctions en Python.
 2.  **Structures de contrôle de flux**
-3.  **Boucles**
-4.  **Exercices pratiques**
+3.  **La valeur `None`**
+4.  **Boucles**
+5.  **Exercices pratiques**
     -   Création de programmes avec des structures de contrôle et des boucles.
     -   Utilisation de Thonny pour déboguer les erreurs.
 
@@ -652,8 +665,217 @@ Voici un petit rappel de la table de vérité pour les opérateurs logiques `and
 En résumé pour le `ET`, il faut que les deux conditions soient vrai pour que l'expression soit vrai. Pour le `OU`, il faut qu'au moins une des conditions soit vrai pour que l'expression soit vrai.
 
 
+### Autres exemples
+
+Voici une liste d'exemples où l'on pourrait devoir utiliser des structures de contrôle de flux avec conditions multiples :
+- **Science générale :** Trouver la bonne formule à appliquer selon les données d'entrée.
+- **Géométrie :** Déterminer s'il y a collision entre deux rectangles.
+- **Administration :** Déterminer si un étudiant est admissible à un programme.
+- TODO: Ajouter des exemples avec les autres disciplines (Doit avoir des conditions multiples).
+
+
+## La valeur **`None`**
+
+En Python, il y a une valeur spéciale qui est `None`. Cette valeur est utilisée pour indiquer qu'une variable n'a pas de valeur. On peut l'utiliser pour initialiser une variable. On peut aussi l'utiliser pour indiquer qu'une fonction ne retourne pas de valeur.
+
+Elle peut être utilisé pour initialiser une variable que l'on va utiliser plus tard. Par exemple, on peut utiliser `None` pour initialiser une variable qui va contenir le résultat d'un calcul.
+
+### Exemple d'utilisation de `None`
+Les opérateurs de comparaison en combinaison de `None` sont très utiles pour faire des choix. Par exemple dans le cas où l'on doit utiliser la bonne formule dépendant des données d'entrée.
+
+Voici un exemple dans lequel on a différente fonction $PV=nRT$ dépendant des données d'entrée :
+
+```py
+# Variables
+R = 0.0821  # Constante des gaz parfaits (L.atm/mol.K)
+
+# Essayez de remplacer une valeur par None pour
+# voir le résultat
+n = 2.5     # Moles de gaz
+T = 300     # Température en Kelvin
+V = 10      # Volume en litres
+P = None    # Pression en atm
+
+msg = ''
+
+# Structure de contrôle de flux
+if n == None:
+    # Cas où n est l'inconnue
+    n = (P * V) / (R * T)
+    msg = "Moles de gaz (n) :" + str(n)
+elif T == None:
+    # Cas où T est l'inconnue
+    T = (P * V) / (R * n)
+    msg = "Température (T) :" + str(T) + " K"
+elif V == None:
+    # Cas où V est l'inconnue
+    V = (n * R * T) / P
+    msg = "Volume (V) :" + str(V) + " L"
+elif P == None:
+    # Cas où P est l'inconnue
+    P = (n * R * T) / V
+    msg = "Pression (P) :" + str(P) + " atm"
+else:
+    # Cas où il y a une erreur
+    msg = "Revérifiez vos données d'entrée. Il y a une erreur, car toutes les variables sont définies."
+
+# Affichage du résultat
+print ("Voici le résultat :")
+print (msg)
+
+```
+
 // TODO: Ajouter des exemples avec des fonctions qui ont des paramètres optionnels.
+
+---
 
 ## Boucles
 
-* * *
+Une boucle en programmation est une structure qui permet d'exécuter un bloc de code de manière répétée, généralement tant qu'une condition spécifiée est vraie. Cela permet d'automatiser la répétition d'une série d'instructions sans avoir à les écrire plusieurs fois.
+
+Imaginez que vous ayez une tâche à accomplir plusieurs fois, comme compter de 1 à 10 ou afficher un message plusieurs fois. Plutôt que de copier et coller le même code encore et encore, vous pouvez utiliser une boucle pour effectuer cette tâche de manière efficace.
+
+Il existe deux types principaux de boucles en programmation :
+
+1. **La boucle `while` :** Cette boucle exécute un bloc de code tant qu'une condition spécifiée est vraie. Elle vérifie la condition avant d'entrer dans la boucle à chaque itération.
+
+Voici un exemple simple en Python pour illustrer une boucle `while` :
+
+```python
+i = 1
+
+while i <= 5:       # Tant que i est plus petit ou égal à 5
+    print("Itération", i)
+    i += 1          # On incrémente i de 1
+```
+
+> ***Nouveauté :*** L'opérateur `+=` permet d'incrémenter une variable. C'est l'équivalent de `somme = somme + note`.
+
+
+2. **La boucle `for` :** Cette boucle itère sur une séquence (comme une liste, une plage de nombres, etc.) et exécute un bloc de code pour chaque élément de la séquence.
+
+Voici un exemple simple en Python pour illustrer une boucle `for` :
+
+```python
+for i in range(1, 6):   # Pour i allant de 1 à 5
+    print("Itération", i)
+```
+
+Dans cet exemple, la boucle `for` itère sur la séquence de nombres de 1 à 5. À chaque itération, le code à l'intérieur de la boucle est exécuté, affichant le message "Itération" suivi du numéro de l'itération.
+
+> ***Nouveauté :*** `range(a, b)` est une fonction qui retourne une séquence de nombres de `a` à `b` où `b` est exclusif. On peut la traduire la plage de nombre entre `a` et `b` exclusif.
+> 
+> On peut aussi utiliser `range(6)` pour avoir une séquence de nombres de 0 à 5.
+
+Les boucles sont un outil puissant pour automatiser des tâches répétitives et sont largement utilisées dans la programmation pour traiter des données, générer des motifs, et bien plus encore. Cependant, il est important de faire attention à la condition de sortie de la boucle pour éviter les boucles infinies (qui ne s'arrêtent jamais).
+
+En effet, voici une boucle `while` qui ne s'arrête jamais :
+
+```python
+while True:
+    print("Boucle infinie")
+```
+Pour l'arrêter, il faut appuyer sur le bouton `Stop` dans Thonny.
+
+---
+
+### Boucle `while`
+La boucle `while` est utilisée pour exécuter un bloc de code tant qu'une condition spécifiée est vraie. Elle vérifie la condition avant d'entrer dans la boucle à chaque itération.
+
+Elle se traduit en français par "tant que".
+
+Souvent on l'utilise pour exécuter un bloc de code un nombre de fois indéterminé. On peut aussi l'utiliser pour exécuter un bloc de code tant qu'une condition est vraie.
+
+Voici quelques exemples de code utilisant une boucle `while` :
+
+```python
+# Fonction qui affiche la somme des nombres de a à b
+def calculer_somme_entre_borne(a, b):
+    i = a
+    somme = 0
+
+    while i <= b:
+        somme += i
+        i += 1
+
+    return somme
+
+lim_inf = 1
+lim_sup = 20
+
+print ("Afficher la somme des nombres de", lim_inf, "à", lim_sup)
+print ("Somme =", calculer_somme_entre_borne(lim_inf, lim_sup))
+
+```
+
+```python
+# Fonction qui affiche les vitesses finales en fonction de la vitesse initiale,
+# de l'accélération et du temps
+
+def calculer_vf(v0, a, tf):
+    vt = v0
+    increment = 1
+    t = 0
+
+    while t <= tf:
+        vt = v0 + a * t
+        print("t =", t, "s, v =", vt, "m/s")
+        t += increment
+
+print ("Calcul de la vitesse finale en fonction de la vitesse initiale, de l'accélération et du temps")
+v0 = float(input("Entrez la vitesse initiale (m/s) : "))
+a = float(input("Entrez l'accélération (m/s^2) : "))
+t = float(input("Entrez la durée en seconde : "))
+
+calculer_vf(v0, a, t)
+```
+
+> ***Nouveauté :*** La fonction `input()` permet de demander une entrée à l'utilisateur. Elle retourne une chaîne de caractères. On doit donc convertir la chaîne de caractères en nombre pour pouvoir faire des calculs avec.
+> 
+
+> ***Nouveauté :*** La fonction `float()` permet de convertir une chaîne de caractères en nombre à virgule flottante. Il existe aussi la fonction `int()` pour convertir une chaîne de caractères en nombre entier.
+
+Voici un exemple de boucle qui ne s'arrête que si la seconde entrée est plus grande que la première :
+
+```python
+# Demander deux nombres à l'utilisateur
+# et afficher le plus grand des deux
+
+print ("Afficher le plus grand des deux nombres")
+
+a = float(input("Entrez un nombre : "))
+b = float(input("Entrez un autre nombre : "))
+
+while a >= b:
+    print("Le premier nombre doit être plus petit que le deuxième.")
+    a = float(input("Entrez un nombre : "))
+    b = float(input("Entrez un autre nombre : "))
+
+```
+
+Voici un autre exemple qui calcule la moyenne de notes entrées par l'utilisateur :
+
+```python
+# Calculer la moyenne de notes entrées par l'utilisateur
+print ("Calculer la moyenne de notes entrées par l'utilisateur")
+
+note = 0
+somme = 0
+nb_notes = 0
+
+while note != -1:
+    note = float(input("Entrez une note (-1 pour terminer) : "))
+    if note != -1:
+        somme += note
+        nb_notes += 1
+
+moyenne = somme / nb_notes
+
+print("La moyenne est", moyenne)
+```
+
+---
+
+### Boucle `for`
+
+TODO : Continuer pour la boucle `for`
