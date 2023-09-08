@@ -490,7 +490,7 @@ Voici un tableau d'exemples valides et non valides :
 | `total_somme`      | `total_$omme` (Les caractères spéciaux ne sont pas permis) |
 | `densite`          | `densité` (Les accents sont proscrits)                     |
 
-* * *
+---
 
 **Exercice 1 : Conversion de température**
 Écrivez une fonction appelée `convertir_c_en_f` qui prend une température en degrés Celsius en tant que paramètre et renvoie la température équivalente en degrés Fahrenheit. La formule de conversion est : $Fahrenheit = (Celsius × 9/5) + 32$.
@@ -499,7 +499,6 @@ Voici un tableau d'exemples valides et non valides :
 Écrivez une fonction appelée `calculer_surface_rectangle` qui prend la longueur et la largeur d'un rectangle en tant que paramètres et renvoie sa surface.
 
 -   Écrivez une fonction appelée `calculer_surface_carre` qui prend la longueur d'un côté d'un carré en tant que paramètre et renvoie sa surface. Cependant, utilisez la fonction `calculer_surface_rectangle` pour effectuer le calcul.
-
 
 
 > **Devoir : Fonctions en lien avec votre domaine d'enseignement** <br />
