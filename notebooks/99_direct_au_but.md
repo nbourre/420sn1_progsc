@@ -551,7 +551,7 @@ Voici quelques questions pour réviser les concepts abordés dans la première s
 
 Les structures de contrôle de flux permettent de contrôler l'exécution du code. Elles permettent de faire des choix selon des conditions. Elles permettent aussi de répéter des instructions.
 
-En français, on utilise les mots `si`, `sinon` et `sinon si` pour faire des choix. En programmation, on utilise les mots `if`, `else` et `elif`.
+En français, on utilise les mots `si`, `sinon` et `sinon si` pour faire des choix. En programmation, on utilise les mots `if`, `else` et `elif` (*contraction de else if*).
 
 Voici la structure générale de contrôle de flux :
 
@@ -563,6 +563,8 @@ elif condition:
 else:
     # Instructions
 ```
+
+Remarquez qu'après la condition, il y a un `:`. C'est la même chose pour les boucles. C'est une syntaxe spécifique à Python. On remarque aussi que les instructions sont indentées. C'est aussi une syntaxe spécifique à Python.
 
 **Seul le `if` est obligatoire**. On peut avoir plusieurs `elif` et un seul `else`. On peut aussi avoir seulement un `if` et un `else`.
 
@@ -577,7 +579,7 @@ if age < 5:
     print("Gratuit")
 elif age < 12:
     print("Tarif enfant")
-elif age < 65
+elif age < 65:
     print("Tarif adulte")
 else:
     print("Tarif aîné")
@@ -591,9 +593,7 @@ Voici un exemple :
 # Variables
 age = 18
 
-est_adulte = age >= 18
-
-if (est_adulte):
+if (age >= 18):
     print("Vous êtes un adulte")
 else:
     print("Vous êtes un mineur")
