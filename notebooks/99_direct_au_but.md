@@ -14,7 +14,7 @@
   - [Introduction à la programmation et à Thonny - 5 minutes](#introduction-à-la-programmation-et-à-thonny---5-minutes)
     - [Installation de Thonny - 8 minutes](#installation-de-thonny---8-minutes)
     - [Tour d'horizon de Thonny - 10 minutes](#tour-dhorizon-de-thonny---10-minutes)
-    - [Tester Thonny](#tester-thonny)
+    - [Tester Thonny - 5 minutes](#tester-thonny---5-minutes)
   - [Concepts fondamentaux de la programmation](#concepts-fondamentaux-de-la-programmation)
     - [Les opérateurs mathématiques](#les-opérateurs-mathématiques)
   - [Écriture de programmes simples - 10 minutes](#écriture-de-programmes-simples---10-minutes)
@@ -182,7 +182,7 @@ En dessous de la barre d'outils, on retrouve la fenêtre principale de Thonny. L
 -   La partie du haut est l'éditeur de code. C'est dans cette partie que vous allez écrire votre code.
 -   La partie du bas est la console. C'est dans cette partie que vous allez voir le résultat de l'exécution de votre code.
 
-### Tester Thonny
+### Tester Thonny - 5 minutes
 
 Pour tester Thonny, nous allons écrire un petit programme qui calcule la pression d'un gaz parfait. Voici le code à coller dans l'éditeur de code :
 
