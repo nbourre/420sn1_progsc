@@ -3,7 +3,7 @@
 # Table des matières <!-- omit in toc -->
 
 - [Introduction](#introduction)
-- [Que peuton faire avec Python?](#que-peuton-faire-avec-python)
+- [Que peut-on faire avec Python?](#que-peut-on-faire-avec-python)
 - [Les plans de leçons](#les-plans-de-leçons)
   - [Plan de leçon 1 : Introduction à la programmation et fonctions de base](#plan-de-leçon-1--introduction-à-la-programmation-et-fonctions-de-base)
   - [Plan de leçon 2 : Contrôle de flux et boucles](#plan-de-leçon-2--contrôle-de-flux-et-boucles)
@@ -44,11 +44,11 @@ Ce cours est basé sur le langage Python. Il existe plusieurs langages de progra
 
 On séparera ce cours en trois leçons d'une heure. La première leçon se consacrera sur la programmation de base, la deuxième sur le contrôle de flux et boucles et la troisième sur les fonctions, les modules et l'affichage de graphiques.
 
-# Que peuton faire avec Python?
+# Que peut-on faire avec Python?
 
-Voici des exemples de capture d'écran d'outils créés avec Python.
+Voici des exemples d'outils créés avec Python ou encore des possibilités.
 
-![Alt text](img/python-3d-smart-cart-plot-1.jpg)![Alt text](img/animated_volcano.gif)![Alt text](img/animated_gapminder.gif)![Alt text](img/getting_data_old_equipment.webp)
+![Alt text](img/python-3d-smart-cart-plot-1.jpg)![Alt text](img/animated_volcano.gif)![Alt text](img/animated_gapminder.gif)![Alt text](img/getting_data_old_equipment.webp)![Alt text](img/pygame.jpeg)
 
 # Les plans de leçons
 
@@ -84,7 +84,7 @@ Durée : 1 heure
 
 Chaque séance d'une heure se concentre sur des concepts spécifiques et propose des exercices pratiques pour renforcer les compétences acquises. Les plans seront adaptés en fonction du niveau de familiarité des enseignants avec la programmation.
 
-* * *
+---
 
 # Leçon 1 : Introduction à la programmation et fonctions de base
 
@@ -890,4 +890,5 @@ TODO : Continuer pour la boucle `for`
 ---
 
 # Références
+- [Python Graph Gallery](https://python-graph-gallery.com/)
 - [PASCO Python Examples](https://github.com/PASCOscientific/pasco_python_examples)
