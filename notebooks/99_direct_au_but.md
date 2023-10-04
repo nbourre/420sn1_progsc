@@ -234,7 +234,6 @@ Dans cette section, nous allons voir les concepts fondamentaux de la programmati
 Voici le code que nous avons écrit dans la section précédente :
 ##### Code base
 ```python
-```py
 # Variables
 # Données d'entrée
 n = 2.5     # Moles de gaz
@@ -270,7 +269,7 @@ print("Pression (P) =", P, " atm")
     -   L'assignation se fait de la droite vers la gauche. La valeur est assignée à la variable.
 -   **Expressions :**
     -   La lignes `P = (n * R * T) / V` est une expression arithmétique dont la valeur est assignée à la variable `P`. Une expression est une combinaison de valeurs, de variables et d'opérateurs. Lorsque l'interpréteur Python évalue une expression, il produit une valeur.
-    -   En programmation, la priorité des opérations est la même qu'en mathématiques. Les opérations entre parenthèses sont effectuées en premier, les exposants, et ainsi de suite.
+    -   En programmation, la priorité des opérations est la même qu'en mathématiques. Les opérations entre parenthèses sont effectuées en premier, les exposants, et ainsi de suite. (Les PEMDAS)
 -   **Affichage :**
     -   La fonction `print()` est utilisée pour afficher du texte et des valeurs à l'écran.
     -   Elle peut prendre plusieurs paramètres séparés par des virgules. Elle affichera les paramètres séparés par un espace.
@@ -302,7 +301,7 @@ Quelques idées :
 -   **Physique :** Vitesse d'un objet en chute libre.
 -   **Chimie :** Concentration d'une solution.
 -   **Mathématiques :** Calcul de la moyenne de notes.
--   **Biologie :** Calcul de l'indice de masse corporelle.
+-   **Biologie :** Seuil d'immunité collective.
 
 * * *
 
@@ -387,7 +386,7 @@ La syntaxe générale pour créer une fonction est la suivante :
 
 ```py
 def nom_de_la_fonction([paramètres [, ...]]):
-    """Documentation de la fonction (optionnel)"""
+    '''Documentation de la fonction (optionnel)'''
     # Corps de la fonction
     # ...
     return valeur_de_retour # Optionnel
