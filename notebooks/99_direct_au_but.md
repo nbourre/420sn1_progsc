@@ -3,6 +3,7 @@
 # Table des matières <!-- omit in toc -->
 
 - [Introduction](#introduction)
+- [Que peuton faire avec Python?](#que-peuton-faire-avec-python)
 - [Les plans de leçons](#les-plans-de-leçons)
   - [Plan de leçon 1 : Introduction à la programmation et fonctions de base](#plan-de-leçon-1--introduction-à-la-programmation-et-fonctions-de-base)
   - [Plan de leçon 2 : Contrôle de flux et boucles](#plan-de-leçon-2--contrôle-de-flux-et-boucles)
@@ -33,14 +34,21 @@
   - [Boucles](#boucles)
     - [Boucle `while`](#boucle-while)
     - [Boucle `for`](#boucle-for)
+- [Références](#références)
 
 # Introduction
 
-Cet article se veut comme un cours rapide sur les bases de la programmation pour pouvoir créer des outils. Il est destiné à des personnes qui ont déjà une base en science et qui veut utiliser la programmation pour faire des analyses de données, des calculs, des graphiques, etc. Il est aussi destiné à des personnes qui ont déjà une base en programmation mais qui veulent apprendre à utiliser Python. On prend aussi pour acquis que le lecteur connaît l'utilité de la programmation.
+Cet article se veut comme un cours rapide sur les bases de la programmation pour pouvoir créer des outils. Il est destiné à des personnes qui ont déjà une base en science et qui veulent utiliser la programmation pour faire des analyses de données, des calculs, des graphiques, etc. Il est aussi destiné à des personnes qui ont déjà une base en programmation mais qui veulent apprendre à utiliser Python. On prend aussi pour acquis que le lecteur connaît l'utilité de la programmation.
 
 Ce cours est basé sur le langage Python. Il existe plusieurs langages de programmation, mais Python est un langage très populaire et très utilisé dans le monde de la science. Il est aussi très facile à apprendre et à utiliser. Il est donc un bon choix pour commencer à apprendre la programmation.
 
 On séparera ce cours en trois leçons d'une heure. La première leçon se consacrera sur la programmation de base, la deuxième sur le contrôle de flux et boucles et la troisième sur les fonctions, les modules et l'affichage de graphiques.
+
+# Que peuton faire avec Python?
+
+Voici des exemples de capture d'écran d'outils créés avec Python.
+
+![Alt text](img/python-3d-smart-cart-plot-1.jpg)![Alt text](img/animated_volcano.gif)![Alt text](img/animated_gapminder.gif)![Alt text](img/getting_data_old_equipment.webp)
 
 # Les plans de leçons
 
@@ -878,3 +886,8 @@ print("La moyenne est", moyenne)
 ### Boucle `for`
 
 TODO : Continuer pour la boucle `for`
+
+---
+
+# Références
+- [PASCO Python Examples](https://github.com/PASCOscientific/pasco_python_examples)
