@@ -6,8 +6,8 @@
 - [Que peut-on faire avec Python?](#que-peut-on-faire-avec-python)
 - [Les plans de leçons](#les-plans-de-leçons)
   - [Plan de leçon 1 : Introduction à la programmation et fonctions de base](#plan-de-leçon-1--introduction-à-la-programmation-et-fonctions-de-base)
-  - [Plan de leçon 2 : Contrôle de flux et boucles](#plan-de-leçon-2--contrôle-de-flux-et-boucles)
-  - [Plan de leçon 3 : Fonctions avancées et visualisation avec Matplotlib](#plan-de-leçon-3--fonctions-avancées-et-visualisation-avec-matplotlib)
+  - [Plan de leçon 2 : Contrôle de flux et les listes](#plan-de-leçon-2--contrôle-de-flux-et-les-listes)
+  - [Plan de leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib](#plan-de-leçon-3--les-boucles-fonctions-avancées-et-visualisation-avec-matplotlib)
 - [Leçon 1 : Introduction à la programmation et fonctions de base](#leçon-1--introduction-à-la-programmation-et-fonctions-de-base)
   - [Objectifs](#objectifs)
   - [Contenu](#contenu)
@@ -16,12 +16,13 @@
     - [Tour d'horizon de Thonny - 10 minutes](#tour-dhorizon-de-thonny---10-minutes)
     - [Tester Thonny - 5 minutes](#tester-thonny---5-minutes)
   - [Concepts fondamentaux de la programmation](#concepts-fondamentaux-de-la-programmation)
+        - [Code base](#code-base)
     - [Les opérateurs mathématiques](#les-opérateurs-mathématiques)
   - [Écriture de programmes simples - 10 minutes](#écriture-de-programmes-simples---10-minutes)
   - [Introduction aux fonctions - 45 minutes](#introduction-aux-fonctions---45-minutes)
-    - [Définition de fonctions](#définition-de-fonctions)
+    - [Création de fonctions](#création-de-fonctions)
     - [Extra : Règles de nomenclatures](#extra--règles-de-nomenclatures)
-- [Leçon 2 : Contrôle de flux et boucles](#leçon-2--contrôle-de-flux-et-boucles)
+- [Leçon 2 : Contrôle de flux et les listes](#leçon-2--contrôle-de-flux-et-les-listes)
   - [Objectifs](#objectifs-1)
   - [Contenu](#contenu-1)
   - [Révision des concepts abordés dans la première séance](#révision-des-concepts-abordés-dans-la-première-séance)
@@ -31,6 +32,16 @@
     - [Autres exemples](#autres-exemples)
   - [La valeur **`None`**](#la-valeur-none)
     - [Exemple d'utilisation de `None`](#exemple-dutilisation-de-none)
+      - [Expliquation de la fonction](#expliquation-de-la-fonction)
+  - [Les listes en Python](#les-listes-en-python)
+    - [Qu'est-ce qu'une liste en Python ?](#quest-ce-quune-liste-en-python-)
+    - [Stocker des données scientifiques](#stocker-des-données-scientifiques)
+    - [Manipuler des données](#manipuler-des-données)
+      - [Accéder aux éléments de la liste](#accéder-aux-éléments-de-la-liste)
+      - [Ajouter et supprimer des éléments](#ajouter-et-supprimer-des-éléments)
+      - [Calculer des statistiques](#calculer-des-statistiques)
+    - [Résumé](#résumé)
+- [Leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib](#leçon-3--les-boucles-fonctions-avancées-et-visualisation-avec-matplotlib)
   - [Boucles](#boucles)
     - [Boucle `while`](#boucle-while)
     - [Boucle `for`](#boucle-for)
@@ -62,21 +73,22 @@ Durée : 1 heure
 -   Introduction aux fonctions : définition, paramètres, valeurs de retour.
 -   Exercices pratiques pour créer et appeler des fonctions simples.
 
-## Plan de leçon 2 : Contrôle de flux et boucles
+## Plan de leçon 2 : Contrôle de flux et les listes
 
 Durée : 1 heure
 
 -   Révision des concepts abordés dans la première séance.
 -   Structures de contrôle de flux : if, else, elif.
--   Utilisation de boucles : while et for.
--   Exercices pratiques pour créer des programmes avec des structures de contrôle et des boucles.
+-   Les listes
+-   Exercices pratiques pour créer des programmes avec des structures de contrôle et des listes
 -   Introduction à l'utilisation de Thonny pour déboguer les erreurs.
 
-## Plan de leçon 3 : Fonctions avancées et visualisation avec Matplotlib
+## Plan de leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib
 
 Durée : 1 heure
 
 -   Révision des concepts abordés dans les séances précédentes.
+-   Les boucles : while et for.
 -   Fonctions avec des valeurs de retour et utilisation avancée de fonctions.
 -   Introduction à la bibliothèque Matplotlib pour la visualisation de données.
 -   Création de graphiques simples avec Matplotlib.
@@ -220,7 +232,8 @@ L'analyse du code se fera dans la partie suivante.
 Dans cette section, nous allons voir les concepts fondamentaux de la programmation. Nous allons voir les variables, les types de données et les opérations mathématiques.
 
 Voici le code que nous avons écrit dans la section précédente :
-
+##### Code base
+```python
 ```py
 # Variables
 # Données d'entrée
@@ -282,7 +295,7 @@ Voici un tableau des opérateurs mathématiques de base en Python :
 
 ## Écriture de programmes simples - 10 minutes
 
-Modifiez le code précédent pour trouver une solution propre à votre domaine d'enseignement.
+Modifiez le [code précédent](#code-base) pour trouver une solution propre à votre domaine d'enseignement.
 
 Quelques idées :
 
@@ -347,7 +360,7 @@ Cette ligne affiche le résultat du calcul. La fonction `print()` prend plusieur
 
 * * *
 
-### Définition de fonctions
+### Création de fonctions
 
 Python offre plusieurs fonctions de base, mais souvent on doit créer nos propres fonctions pour effectuer des tâches spécifiques. Voici un exemple de fonction calculant le sinus d'un angle en degrés :
 
@@ -374,20 +387,23 @@ La syntaxe générale pour créer une fonction est la suivante :
 
 ```py
 def nom_de_la_fonction([paramètres [, ...]]):
-    # Instructions
-    return valeur_de_retour
+    """Documentation de la fonction (optionnel)"""
+    # Corps de la fonction
+    # ...
+    return valeur_de_retour # Optionnel
 ```
 
 -   Le mot-clé `def` est utilisé pour définir une fonction.
--   Le nom de la fonction doit être unique. Il est recommandé d'utiliser un nom qui décrit la fonction.
--   Les paramètres sont des valeurs qui sont passées à la fonction. **Les paramètres sont optionnels**. Si la fonction ne prend pas de paramètres, on doit quand même mettre les parenthèses.
+-   Le **nom de la fonction** doit être unique. Il est recommandé d'utiliser un nom qui décrit la fonction.
+-   Les **paramètres** sont des valeurs qui sont passées à la fonction. **Les paramètres sont optionnels**. Si la fonction ne prend pas de paramètres, on doit quand même mettre les parenthèses. Cela permet de distinguer une fonction d'une variable.
     -   Les paramètres sont séparés par des virgules.
     -   Les paramètres sont des variables locales à la fonction. Elles ne sont pas accessibles à l'extérieur de la fonction.
--   `return` est utilisé pour retourner une valeur à l'appelant. Si la fonction ne retourne pas de valeur, `return` est optionnel.
+-   **`return`** est utilisé pour retourner une valeur à l'appelant.
     -   `return` termine l'exécution de la fonction.
     -   `return` peut retourner une valeur ou une expression.
     -   `return` peut retourner plusieurs valeurs séparées par des virgules.
     -   `return` peut être utilisé pour retourner une valeur avant la fin de la fonction.
+    -   `return` est optionnel. Si la fonction ne retourne pas de valeur, on peut omettre le `return`.
 
 > **Note :** Dans la littérature technique, les caractères `[]` indiquent que le contenu est optionnel. Dans la syntaxe ci-dessus, les paramètres sont optionnels. On peut donc écrire `def nom_de_la_fonction():` si la fonction ne prend pas de paramètres.
 
@@ -518,7 +534,7 @@ Voici un tableau d'exemples valides et non valides :
 
 * * *
 
-# Leçon 2 : Contrôle de flux et boucles
+# Leçon 2 : Contrôle de flux et les listes
 
 **Durée : 1 heure**
 
@@ -561,14 +577,17 @@ Les structures de contrôle de flux permettent de contrôler l'exécution du cod
 
 En français, on utilise les mots `si`, `sinon` et `sinon si` pour faire des choix. En programmation, on utilise les mots `if`, `else` et `elif` (*contraction de else if*).
 
-Voici la structure générale de contrôle de flux :
+> **Comparaison avec Excel** <br />
+> Si vous avez déjà utilisé Excel, vous avez probablement utilisé les fonctions `SI` et `SOMME.SI`. Ces fonctions sont des structures de contrôle de flux. Elles permettent de faire des choix selon des conditions.
+
+Voici la structure générale de contrôle de flux en Python:
 
 ```py
 if condition:
     # Instructions
-elif condition:
+elif condition: # Optionnel
     # Instructions
-else:
+else: # Optionnel
     # Instructions
 ```
 
@@ -659,6 +678,10 @@ else:
     print("On reste à la maison")
 ```
 
+> **Attention erreur fréquente!** <br />
+> Dans les expressions conditionnelles, on utilise `==` pour vérifier l'égalité. On utilise `=` pour assigner une valeur à une variable. <br />
+> Si vous trouvez que votre code ne fonctionne pas, vérifiez que vous n'avez pas utilisé `=` au lieu de `==`.
+
 #### Table de vérité 
 Voici un petit rappel de la table de vérité pour les opérateurs logiques `and` et `or` :
 
@@ -670,7 +693,6 @@ Voici un petit rappel de la table de vérité pour les opérateurs logiques `and
 | `F`  | `F`  |    `F`    |   `F`    |
 
 En résumé pour le `ET`, il faut que les deux conditions soient vrai pour que l'expression soit vrai. Pour le `OU`, il faut qu'au moins une des conditions soit vrai pour que l'expression soit vrai.
-
 
 ### Autres exemples
 
@@ -732,10 +754,118 @@ print (msg)
 
 ```
 
-// TODO: Ajouter des exemples avec des fonctions qui ont des paramètres optionnels.
+Voici par exemple une fonction qui retourne la valeur manquante dans la loi des gas parfaits :
+
+```py
+def ideal_gas_law(P=None, V=None, n=None, T=None):
+    # Constante
+    R = 0.0821  # Constante des gaz parfaits (L.atm/mol.K)
+
+    if P == None:
+        return (n * R * T) / V
+    elif V == None:
+        return (n * R * T) / P
+    elif n == None:
+        return (P * V) / (R * T)
+    elif T == None:
+        return (P * V) / (n * R)
+    else:
+        return None
+
+
+# Tests de la fonction
+print(ideal_gas_law(P=1, V=1, n=1), "K")
+print(ideal_gas_law(P=1, V=1, T=1), "mol")
+print(ideal_gas_law(P=1, n=1, T=1), "L")
+print(ideal_gas_law(V=1, n=1, T=1), "atm")
+```
+
+#### Expliquation de la fonction
+La fonction `ideal_gas_law` prend en paramètre les variables `P`, `V`, `n` et `T`. Ces variables sont initialisées à `None` par défaut. Cela permet de ne pas avoir à spécifier tous les paramètres lors de l'appel de la fonction.
+
+> **Nouveauté** : On peut spécifier les paramètres lors de l'appel de la fonction. Cela permet de ne pas avoir à respecter l'ordre des paramètres. <br/>
+> Dans l'exemple précédent, on peut voir dans les tests que l'on a spécifié les paramètres `P`, `V`, `n` et `T` dans un ordre différent de la définition de la fonction. 
 
 ---
 
+## Les listes en Python
+
+L'une des structures de données les plus fondamentales en Python est la liste, qui peut être un outil puissant pour stocker, organiser et manipuler des données. Dans cette partie, nous explorerons l'utilisation des listes en Python.
+
+### Qu'est-ce qu'une liste en Python ?
+
+Une liste en Python est une collection ordonnée d'éléments. Ces éléments peuvent être de différents types de données, tels que des nombres, des chaînes de caractères, des booléens, voire même d'autres listes. Les listes sont déclarées en utilisant des crochets `[]` et en séparant les éléments par des virgules. Voici un exemple simple :
+
+```python
+# Déclaration d'une liste de nombres
+ma_liste = [1, 2, 3, 4, 5]
+```
+
+### Stocker des données scientifiques
+
+En tant que personne de sciences, vous pouvez utiliser des listes pour stocker des données expérimentales, des résultats d'observations ou des séquences de mesures. Par exemple, si vous effectuez des mesures de la température et de la vitesse du vent à différents moments de la journée, vous pouvez stocker ces valeurs dans une liste :
+
+```python
+temperature = [23.5, 25.2, 22.8, 26.1, 21.9]
+vitesse_vent = [12, 15, 11, 13, 14]
+```
+
+### Manipuler des données
+
+Une fois que vous avez stocké des données dans une liste, vous pouvez les manipuler de différentes manières. Voici quelques opérations courantes que vous pouvez effectuer avec des listes :
+
+#### Accéder aux éléments de la liste
+
+Pour accéder à un élément spécifique de la liste, utilisez l'indice de cet élément (**les indices commencent à 0 en Python**). Par exemple, pour obtenir la deuxième valeur de la liste `temperature`, utilisez `temperature[1]`.
+
+```python
+# Accéder à la deuxième valeur de la liste temperature
+print(temperature[1])
+```
+
+#### Ajouter et supprimer des éléments
+
+Vous pouvez ajouter des éléments à une liste avec la méthode `append()`, et vous pouvez supprimer des éléments avec la méthode `remove()`. Par exemple, pour ajouter une nouvelle mesure de température à votre liste, utilisez `temperature.append(24.7)`, et pour supprimer une valeur spécifique, utilisez `temperature.remove(23.5)`.
+
+Il y a aussi le méthode `pop()` qui permet de supprimer un élément à un indice spécifique. Par exemple, `temperature.pop(0)` supprime le premier élément de la liste `temperature`.
+
+```python
+temperature = [23.5, 25.2, 22.8, 26.1, 21.9]
+
+# Ajouter une nouvelle mesure de température
+temperature.append(24.7)
+
+# Supprimer une valeur spécifique
+temperature.remove(26.1)
+
+# Supprimer le premier élément de la liste
+temperature.pop(0)
+```
+
+
+#### Calculer des statistiques
+
+Python offre de nombreuses bibliothèques pour effectuer des calculs statistiques sur des listes de données. La bibliothèque `numpy` est particulièrement populaire pour ces tâches. Par exemple, vous pouvez calculer la moyenne des températures de votre liste avec `numpy` :
+
+```python
+# Importation de la bibliothèque numpy
+# renommée en tant que np pour faciliter l'utilisation
+import numpy as np
+
+mean_temperature = np.mean(temperature)
+```
+
+> **Note :** Si vous avez une erreur du type `ModuleNotFoundError: No module named 'numpy'`, vous devez installer le module `numpy`. Pour ce faire, allez dans le menu `Outils` et sélectionnez `Gérer les paquets`. Dans la fenêtre qui s'ouvre, recherchez `numpy` et installez le paquet en cliquant dessus. Vous pouvez aussi utiliser la commande `pip install numpy` dans le terminal.
+
+### Résumé
+
+Les listes en Python sont un outil puissant pour les enseignants débutants en sciences. Elles permettent de stocker, organiser et manipuler efficacement des données scientifiques. Combinées avec les boucles et d'autres concepts de base de Python, les listes peuvent aider les enseignants à automatiser des tâches, à effectuer des calculs statistiques et à illustrer des concepts scientifiques de manière interactive. En explorant les listes et d'autres fonctionnalités de Python, les enseignants peuvent enrichir leur enseignement et aider leurs élèves à développer des compétences en programmation utiles dans le domaine des sciences.
+
+---
+
+# Leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib
+
+---
 ## Boucles
 
 Une boucle en programmation est une structure qui permet d'exécuter un bloc de code de manière répétée, généralement tant qu'une condition spécifiée est vraie. Cela permet d'automatiser la répétition d'une série d'instructions sans avoir à les écrire plusieurs fois.
