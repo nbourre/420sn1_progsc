@@ -1,19 +1,20 @@
 from manim import *
+import random
 
 class ExampleArray(Scene):
-    CONFIG = {
-        "array_len": 6,
-        "random_seed": 1, # with this you force to manim use other numbers
-        # Change the random_seed to other number every time you want other 
-        # random numbers
-    }
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.array_len = 6
+        self.random_seed = 1  # You can keep your other configuration options here
+
     def construct(self):
-        labels = TextMobject(*[
-            f"[{index}]" 
+        #VGroup is a container for multiple mobjects
+        labels = VGroup(*[
+            Text(f"[{index}]", font_size=24)  # Set the font size here
             for index in range(self.array_len)
         ])
-        text = TextMobject(*[
-            str(random.randint(0,10))
+        text = VGroup(*[
+            Text(str(random.randint(0, 10)), font_size=24)  # Set the font size here
             for i in range(self.array_len)
         ])
         # space it out

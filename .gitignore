@@ -129,5 +129,4 @@ dmypy.json
 .pyre/
 
 # Manim exclude generated content
-ressources/manim/videos/
-ressources/manim/texts/
+ressources/manim/media/
