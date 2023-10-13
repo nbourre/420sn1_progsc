@@ -35,16 +35,22 @@
       - [Expliquation de la fonction](#expliquation-de-la-fonction)
   - [Les listes en Python](#les-listes-en-python)
     - [Qu'est-ce qu'une liste en Python ?](#quest-ce-quune-liste-en-python-)
+    - [Afficher une liste](#afficher-une-liste)
     - [Stocker des données scientifiques](#stocker-des-données-scientifiques)
     - [Manipuler des données](#manipuler-des-données)
-      - [Accéder aux éléments de la liste](#accéder-aux-éléments-de-la-liste)
       - [Ajouter et supprimer des éléments](#ajouter-et-supprimer-des-éléments)
       - [Calculer des statistiques](#calculer-des-statistiques)
-    - [Résumé](#résumé)
-- [Leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib](#leçon-3--les-boucles-fonctions-avancées-et-visualisation-avec-matplotlib)
-  - [Boucles](#boucles)
-    - [Boucle `while`](#boucle-while)
+    - [Résumé des fonctions utiles pour les listes](#résumé-des-fonctions-utiles-pour-les-listes)
+  - [Les boucles](#les-boucles)
+    - [En Python](#en-python)
     - [Boucle `for`](#boucle-for)
+      - [Exemple](#exemple)
+    - [Boucle `while`](#boucle-while)
+      - [Sortir d'une boucle](#sortir-dune-boucle)
+  - [Résumé de la leçon](#résumé-de-la-leçon)
+  - [Exercices pour la prochaine séance](#exercices-pour-la-prochaine-séance)
+  - [Extra](#extra)
+- [Leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib](#leçon-3--les-boucles-fonctions-avancées-et-visualisation-avec-matplotlib)
 - [Références](#références)
 
 # Introduction
@@ -542,10 +548,9 @@ Voici un tableau d'exemples valides et non valides :
 -   Réviser les concepts abordés dans la première séance.
 -   Apprendre à utiliser les structures de contrôle de flux.
 -   Apprendre à utiliser la valeur `None`
--   Apprendre à utiliser les boucles.
+-   Apprendre à utiliser les listes
 -   Apprendre à utiliser Thonny pour déboguer les erreurs.
--   Créer des programmes avec des structures de contrôle et des boucles.
-
+-   Créer des programmes en utilisant des listes et des structures de contrôle de flux.
 ## Contenu
 
 1.  **Bref retour sur les concepts abordés dans la première séance**
@@ -554,7 +559,7 @@ Voici un tableau d'exemples valides et non valides :
     -   Définition de fonctions en Python.
 2.  **Structures de contrôle de flux**
 3.  **La valeur `None`**
-4.  **Boucles**
+4.  **Les listes**
 5.  **Exercices pratiques**
     -   Création de programmes avec des structures de contrôle et des boucles.
     -   Utilisation de Thonny pour déboguer les erreurs.
@@ -569,6 +574,7 @@ Voici quelques questions pour réviser les concepts abordés dans la première s
 4.  Qu'est-ce qu'une fonction?
 5.  Qu'est-ce que l'indentation?
 6.  Quelles sont les règles générales de nomenclatures en Python?
+7.  Quelles fonctions avez-vous créées dans votre devoir?
 
 ## Structures de contrôle de flux
 
@@ -576,10 +582,14 @@ Les structures de contrôle de flux permettent de contrôler l'exécution du cod
 
 En français, on utilise les mots `si`, `sinon` et `sinon si` pour faire des choix. En programmation, on utilise les mots `if`, `else` et `elif` (*contraction de else if*).
 
+On utilise parfois un diagramme à flux de données pour représenter les structures de contrôle de flux. Voici un exemple :
+
+<img src="img/diagramme_flux.png" width="50%" />
+
 > **Comparaison avec Excel** <br />
 > Si vous avez déjà utilisé Excel, vous avez probablement utilisé les fonctions `SI` et `SOMME.SI`. Ces fonctions sont des structures de contrôle de flux. Elles permettent de faire des choix selon des conditions.
 
-Voici la structure générale de contrôle de flux en Python:
+Voici la **structure générale** de contrôle de flux en Python:
 
 ```py
 if condition:
@@ -590,9 +600,11 @@ else: # Optionnel
     # Instructions
 ```
 
-Remarquez qu'après la condition, il y a un `:`. C'est la même chose pour les boucles. C'est une syntaxe spécifique à Python. On remarque aussi que les instructions sont indentées. C'est aussi une syntaxe spécifique à Python.
-
 **Seul le `if` est obligatoire**. On peut avoir plusieurs `elif` et un seul `else`. On peut aussi avoir seulement un `if` et un `else`.
+
+> **Note :** Remarquez qu'après la condition, il y a un "`:`". On note aussi que les instructions suivant la condition sont indentées. C'est une syntaxe spécifique à Python.
+> 
+> Le nombre d'espaces standard est de 4 ([Src : PEP 8](https://peps.python.org/pep-0008/#indentation)). Il est aussi possible de mettre des tabulations. Cependant, il faut être cohérent. Il est proscrit de mélanger les espaces et les tabulations.
 
 Voici un exemple que vous pouvez tester:
 
@@ -613,7 +625,7 @@ else:
 
 Dans un `if`, il y a une condition. La condition est une expression booléenne. Une expression booléenne est une expression qui retourne `True` ou `False`. Si la condition est `True`, les instructions dans le `if` sont exécutées. Si la condition est `False`, les instructions dans le `if` sont ignorées.
 
-Voici un exemple :
+Voici un autre exemple :
 
 ```py
 # Variables
@@ -623,6 +635,17 @@ if (age >= 18):
     print("Vous êtes un adulte")
 else:
     print("Vous êtes un mineur")
+```
+
+Voici le code qui représente le diagramme de flux montré plus haut :
+
+```py
+# Variables
+note = 70
+
+if note <= 65:
+    print ("Attention, risque d'échec!")
+
 ```
 
 On peut mettre des structures conditionnelles à l'intérieur des fonctions.
@@ -674,7 +697,7 @@ ami = True
 if age >= 18 and ami:
     print("On va au Trou du Diable!")
 else:
-    print("On reste à la maison")
+    print("On va dans ton sous-sol!")
 ```
 
 > **Attention erreur fréquente!** <br />
@@ -696,11 +719,9 @@ En résumé pour le `ET`, il faut que les deux conditions soient vrai pour que l
 ### Autres exemples
 
 Voici une liste d'exemples où l'on pourrait devoir utiliser des structures de contrôle de flux avec conditions multiples :
-- **Science générale :** Trouver la bonne formule à appliquer selon les données d'entrée.
+- **Science générale :** Trouver la bonne formule à appliquer selon les données d'entrée, i.e. quelle est l'inconnue.
 - **Géométrie :** Déterminer s'il y a collision entre deux rectangles.
 - **Administration :** Déterminer si un étudiant est admissible à un programme.
-- TODO: Ajouter des exemples avec les autres disciplines (Doit avoir des conditions multiples).
-
 
 ## La valeur **`None`**
 
@@ -782,7 +803,12 @@ print(ideal_gas_law(V=1, n=1, T=1), "atm")
 #### Expliquation de la fonction
 La fonction `ideal_gas_law` prend en paramètre les variables `P`, `V`, `n` et `T`. Ces variables sont initialisées à `None` par défaut. Cela permet de ne pas avoir à spécifier tous les paramètres lors de l'appel de la fonction.
 
-> **Nouveauté** : On peut spécifier les paramètres lors de l'appel de la fonction. Cela permet de ne pas avoir à respecter l'ordre des paramètres. <br/>
+> **Nouveauté : Valeur par défaut** <br />
+> On peut donner des valeurs par défaut à des paramètres. Cela permet de ne pas avoir à spécifier tous les paramètres lors de l'appel de la fonction. <br/>
+>
+
+> **Nouveauté : Paramètre spécifié** <br />
+> On peut spécifier les paramètres lors de l'appel de la fonction. Cela permet de ne pas avoir à respecter l'ordre des paramètres. <br/>
 > Dans l'exemple précédent, on peut voir dans les tests que l'on a spécifié les paramètres `P`, `V`, `n` et `T` dans un ordre différent de la définition de la fonction. 
 
 ---
@@ -800,27 +826,58 @@ Une liste en Python est une collection ordonnée d'éléments. Ces éléments pe
 ma_liste = [1, 2, 3, 4, 5]
 ```
 
+### Afficher une liste
+Pour afficher le contenu d'une liste, vous pouvez utiliser la fonction `print()`.
+
+```python
+# Afficher le contenu de la liste
+print(ma_liste)
+```
+
+Pour afficher un élément spécifique de la liste, vous pouvez utiliser l'index de cet élément. Par exemple, pour afficher le deuxième élément de la liste, utilisez `print(ma_liste[1])`.
+
+```python
+# Afficher le premier élément de la liste
+print(ma_liste[0])
+
+# Afficher le deuxième élément de la liste
+print(ma_liste[1])
+```
+
+Vous avez probablement remarqué que les index commencent à 0. Cela signifie que le premier élément d'une liste a un index de 0, le deuxième élément a un index de 1, et ainsi de suite.
+
+> **Perle de culture : Pourquoi les index débutent par 0** <br />
+> Dans les années 60, les langages de programmation étaient écrits en assembleur. Les tableaux étaient stockés dans la mémoire de l'ordinateur (Ils le sont toujours.). Pour accéder à un  tableau, on utilisait l'adresse mémoire du tableau. L'adresse mémoire du premier élément était "**adresse_memoire + (index * taille_element)**". Les langages subséquents ont conservés cette convention et c'est pourquoi les index débutent par 0. <br />
+
 ### Stocker des données scientifiques
 
 En tant que personne de sciences, vous pouvez utiliser des listes pour stocker des données expérimentales, des résultats d'observations ou des séquences de mesures. Par exemple, si vous effectuez des mesures de la température et de la vitesse du vent à différents moments de la journée, vous pouvez stocker ces valeurs dans une liste :
 
 ```python
-temperature = [23.5, 25.2, 22.8, 26.1, 21.9]
-vitesse_vent = [12, 15, 11, 13, 14]
+temperatures = [23.5, 25.2, 22.8, 26.1, 21.9]
+vitesses_vent = [12, 15, 11, 13, 14]
 ```
+
 
 ### Manipuler des données
+Une fois que vous avez stocké des données dans une liste, vous pouvez les manipuler de différentes manières. Voici quelques opérations courantes que vous pouvez effectuer avec des listes.
 
-Une fois que vous avez stocké des données dans une liste, vous pouvez les manipuler de différentes manières. Voici quelques opérations courantes que vous pouvez effectuer avec des listes :
-
-#### Accéder aux éléments de la liste
-
-Pour accéder à un élément spécifique de la liste, utilisez l'indice de cet élément (**les indices commencent à 0 en Python**). Par exemple, pour obtenir la deuxième valeur de la liste `temperature`, utilisez `temperature[1]`.
+Collez le code suivant dans Thonny et exécutez-le.
 
 ```python
+temperatures = [23.5, 25.2, 22.8, 26.1, 21.9]
+etudiants = ["Jean", "Marie", "Pierre", "Julie", "Sophie"]
+
 # Accéder à la deuxième valeur de la liste temperature
-print(temperature[1])
+print(temperatures[1])
+print (etudiants[3])
+
+# Construire une phrase avec les valeurs de la liste
+print ("La température est de", temperatures[2], "degrés.")
+print ("L'étudiant", etudiants[0], "a obtenu une température de", temperatures[0], "degrés.")
 ```
+
+
 
 #### Ajouter et supprimer des éléments
 
@@ -829,18 +886,20 @@ Vous pouvez ajouter des éléments à une liste avec la méthode `append()`, et 
 Il y a aussi le méthode `pop()` qui permet de supprimer un élément à un indice spécifique. Par exemple, `temperature.pop(0)` supprime le premier élément de la liste `temperature`.
 
 ```python
-temperature = [23.5, 25.2, 22.8, 26.1, 21.9]
+print (temperatures)
 
-# Ajouter une nouvelle mesure de température
-temperature.append(24.7)
+# Ajouter une valeur à la liste
+temperatures.append(24.7)
+print (temperatures)
 
-# Supprimer une valeur spécifique
-temperature.remove(26.1)
+# Supprimer une valeur de la liste
+temperatures.remove(23.5)
+print (temperatures)
 
-# Supprimer le premier élément de la liste
-temperature.pop(0)
+# Supprimer une valeur à un indice spécifique
+temperatures.pop(0)
+print (temperatures)
 ```
-
 
 #### Calculer des statistiques
 
@@ -851,71 +910,109 @@ Python offre de nombreuses bibliothèques pour effectuer des calculs statistique
 # renommée en tant que np pour faciliter l'utilisation
 import numpy as np
 
-mean_temperature = np.mean(temperature)
+temperatures = [23.5, 25.2, 22.8, 26.1, 21.9]
+
+# Calculer la moyenne des valeurs
+mean_temperature = np.mean(temperatures)
+
+# Calculer l'écart-type des valeurs
+std_temperature = np.std(temperatures)
+
+# Afficher les résultats
+print("Les températures sont", temperatures)
+print("La moyenne des températures est de", mean_temperature, "degrés.")
+print("L'écart-type des températures est de", std_temperature, "degrés.")
 ```
 
 > **Note :** Si vous avez une erreur du type `ModuleNotFoundError: No module named 'numpy'`, vous devez installer le module `numpy`. Pour ce faire, allez dans le menu `Outils` et sélectionnez `Gérer les paquets`. Dans la fenêtre qui s'ouvre, recherchez `numpy` et installez le paquet en cliquant dessus. Vous pouvez aussi utiliser la commande `pip install numpy` dans le terminal.
 
-### Résumé
+### Résumé des fonctions utiles pour les listes
+Voici les principales fonctions utiles pour les listes :
 
-Les listes en Python sont un outil puissant pour les enseignants débutants en sciences. Elles permettent de stocker, organiser et manipuler efficacement des données scientifiques. Combinées avec les boucles et d'autres concepts de base de Python, les listes peuvent aider les enseignants à automatiser des tâches, à effectuer des calculs statistiques et à illustrer des concepts scientifiques de manière interactive. En explorant les listes et d'autres fonctionnalités de Python, les enseignants peuvent enrichir leur enseignement et aider leurs élèves à développer des compétences en programmation utiles dans le domaine des sciences.
+| Fonction | Description | Exemple |
+| :------: | :---------- | :------ |
+| `append()` | Ajoute un élément à la fin de la liste | `ma_liste.append(5)` |
+| `remove()` | Supprime un élément de la liste | `ma_liste.remove(5)` |
+| `pop()` | Supprime un élément à un indice spécifique | `ma_liste.pop(0)` |
+| `len()` | Retourne le nombre d'éléments dans la liste | `len(ma_liste)` |
+| `min()` | Retourne la valeur minimale de la liste | `min(ma_liste)` |
+| `max()` | Retourne la valeur maximale de la liste | `max(ma_liste)` |
+| `sum()` | Retourne la somme des valeurs de la liste | `sum(ma_liste)` |
+
+Avec la librairie `numpy`, on peut avoir d'autres fonctions utiles :
+| Fonction | Description | Exemple |
+| :------: | :---------- | :------ |
+| `numpy.mean()` | Retourne la moyenne des valeurs de la liste | `numpy.mean(ma_liste)` |
+| `numpy.std()` | Retourne l'écart-type des valeurs de la liste | `numpy.std(ma_liste)` |
 
 ---
 
-# Leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib
+## Les boucles
 
----
-## Boucles
+En programmation, il y a un concept qui s'appelle la répétition. Cela permet d'exécuter un bloc de code de manière répétée. 
 
-Une boucle en programmation est une structure qui permet d'exécuter un bloc de code de manière répétée, généralement tant qu'une condition spécifiée est vraie. Cela permet d'automatiser la répétition d'une série d'instructions sans avoir à les écrire plusieurs fois.
+On appelle cela une boucle. Généralement, on répétera une boucle tant qu'une condition spécifiée est vraie. Cela permet d'automatiser des tâches répétitives et est largement utilisé dans la programmation pour traiter des données, générer des motifs, et bien plus encore.
 
-Imaginez que vous ayez une tâche à accomplir plusieurs fois, comme compter de 1 à 10 ou afficher un message plusieurs fois. Plutôt que de copier et coller le même code encore et encore, vous pouvez utiliser une boucle pour effectuer cette tâche de manière efficace.
+Imaginez que vous ayez une tâche à accomplir plusieurs fois, comme compter de 1 à 100 ou afficher un message plusieurs fois. Plutôt que de copier et coller le même code encore et encore, vous pouvez utiliser une boucle pour effectuer cette tâche de manière efficace.
 
-Il existe deux types principaux de boucles en programmation :
+### En Python
 
-1. **La boucle `while` :** Cette boucle exécute un bloc de code tant qu'une condition spécifiée est vraie. Elle vérifie la condition avant d'entrer dans la boucle à chaque itération.
+En Python, il existe deux principales structures de boucles, à savoir les boucles `for` et `while`. Chacune de ces structures est utilisée pour répéter un bloc de code plusieurs fois, mais elles sont utilisées dans des contextes légèrement différents en fonction des besoins spécifiques du programme.
 
-Voici un exemple simple en Python pour illustrer une boucle `while` :
+### Boucle `for`
 
-```python
-i = 1
+La boucle `for` est utilisée pour itérer sur une séquence (qui peut être une liste, un tuple, un dictionnaire, un ensemble ou une chaîne). Elle est souvent utilisée quand nous savons à l'avance combien de fois nous voulons que le bloc de code soit exécuté.
 
-while i <= 5:       # Tant que i est plus petit ou égal à 5
-    print("Itération", i)
-    i += 1          # On incrémente i de 1
-```
-
-> ***Nouveauté :*** L'opérateur `+=` permet d'incrémenter une variable. C'est l'équivalent de `somme = somme + note`.
-
-
-2. **La boucle `for` :** Cette boucle itère sur une séquence (comme une liste, une plage de nombres, etc.) et exécute un bloc de code pour chaque élément de la séquence.
-
-Voici un exemple simple en Python pour illustrer une boucle `for` :
+Exemple basique d'utilisation d'une boucle `for`:
 
 ```python
-for i in range(1, 6):   # Pour i allant de 1 à 5
-    print("Itération", i)
+for i in range(5):  # i prend les valeurs de 0 à 4
+    print(i)
 ```
 
-Dans cet exemple, la boucle `for` itère sur la séquence de nombres de 1 à 5. À chaque itération, le code à l'intérieur de la boucle est exécuté, affichant le message "Itération" suivi du numéro de l'itération.
+Vous pouvez également itérer directement sur les éléments d'une liste ou d'une autre collection:
+
+```python
+matieres = ["Chimie", "Physique", "Mathématiques", "Programmation", "Biologie"]
+for matiere in matieres:
+    print(matiere)
+```
 
 > ***Nouveauté :*** `range(a, b)` est une fonction qui retourne une séquence de nombres de `a` à `b` où `b` est exclusif. On peut la traduire la plage de nombre entre `a` et `b` exclusif.
 > 
 > On peut aussi utiliser `range(6)` pour avoir une séquence de nombres de 0 à 5.
+>
+> Nous y reviendrons plus tard.
 
-Les boucles sont un outil puissant pour automatiser des tâches répétitives et sont largement utilisées dans la programmation pour traiter des données, générer des motifs, et bien plus encore. Cependant, il est important de faire attention à la condition de sortie de la boucle pour éviter les boucles infinies (qui ne s'arrêtent jamais).
-
-En effet, voici une boucle `while` qui ne s'arrête jamais :
+#### Exemple
+Voici un exemple de boucle `for` qui permet de générer un graphique de la fonction $y = x^2$ :
 
 ```python
-while True:
-    print("Boucle infinie")
-```
-Pour l'arrêter, il faut appuyer sur le bouton `Stop` dans Thonny.
+import matplotlib.pyplot as plt
 
----
+# Création des listes
+x = []
+y = []
+
+# Remplissage des listes
+for i in range(-10, 11):
+    x.append(i)
+    y.append(i**2)
+
+# Affichage du graphique
+plt.plot(x, y)
+plt.show()
+```
+
+<details><summary>Résultat</summary>
+
+![Alt text](img/matplotlib_graphique.png)
+
+</details>
+
 
 ### Boucle `while`
+
 La boucle `while` est utilisée pour exécuter un bloc de code tant qu'une condition spécifiée est vraie. Elle vérifie la condition avant d'entrer dans la boucle à chaque itération.
 
 Elle se traduit en français par "tant que".
@@ -931,7 +1028,7 @@ def calculer_somme_entre_borne(a, b):
     somme = 0
 
     while i <= b:
-        somme += i
+        somme += i # Équivaut à somme = somme + i
         i += 1
 
     return somme
@@ -943,6 +1040,8 @@ print ("Afficher la somme des nombres de", lim_inf, "à", lim_sup)
 print ("Somme =", calculer_somme_entre_borne(lim_inf, lim_sup))
 
 ```
+
+Voici un autre exemple de boucle `while` qui permet de calculer la vitesse finale d'un objet :
 
 ```python
 # Fonction qui affiche les vitesses finales en fonction de la vitesse initiale,
@@ -1010,14 +1109,68 @@ moyenne = somme / nb_notes
 print("La moyenne est", moyenne)
 ```
 
+#### Sortir d'une boucle
+En plus de la condition de la boucle, on peut utiliser l'instruction `break` pour sortir d'une boucle. Cela peut être utile si on veut sortir d'une boucle avant que la condition ne soit fausse.
+
+Voici un exemple :
+
+```python
+# Demander deux nombres à l'utilisateur
+# et afficher le plus grand des deux
+print ("Afficher le plus grand des deux nombres")
+print("Entrez sur 'q' pour quitter.")
+
+while True:
+
+    a = input("Entrez un nombre : "))
+    b = input("Entrez un autre nombre : "))
+
+    if a == 'q' or b == 'q':
+        break
+
+    a = float (a)
+    b = float (b)
+
+    if a > b:
+        print("Le premier nombre est plus grand.")
+    elif a < b:
+        print("Le deuxième nombre est plus grand.")
+    else:
+        print("Les deux nombres sont égaux.")
+
+
+```
+
+## Résumé de la leçon
+Dans cette leçon, nous avons appris à utiliser les structures de contrôle de flux, les listes en Python et les boucles.
+
+Les structures de contrôle de flux permettent de contrôler l'exécution du code. Elles permettent de faire des choix selon des conditions. Elles permettent aussi de répéter des instructions.
+
+Les listes sont une structure de données qui permet de stocker des données dans un objet. Elles permettent de manipuler des données de différentes manières.
+
+Les boucles permettent de répéter un bloc de code plusieurs fois. Il existe deux types de boucles en Python : la boucle `for` et la boucle `while`.
+
+## Exercices pour la prochaine séance
+Dans votre domaine respectif, à l'aide de fonction et de boucle, vous devez créer un programme qui permet de générer des données.
+
+**Défi supplémentaire**
+- Afficher le graphique en utilisant la librairie `matplotlib`.
+- Afficher les données pour qu'elles soient copiables dans Excel.
+
+## Extra
+Si le temps nous le permet, faire une démonstration avec l'utilisation de ChatGPT pour nous aider à faire du code.
+
 ---
 
-### Boucle `for`
 
-TODO : Continuer pour la boucle `for`
+# Leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib
+
+TODO  : À venir - Leçon 3
+
 
 ---
 
 # Références
 - [Python Graph Gallery](https://python-graph-gallery.com/)
 - [PASCO Python Examples](https://github.com/PASCOscientific/pasco_python_examples)
+- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/#toc)
