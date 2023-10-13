@@ -32,7 +32,6 @@
     - [Autres exemples](#autres-exemples)
   - [La valeur **`None`**](#la-valeur-none)
     - [Exemple d'utilisation de `None`](#exemple-dutilisation-de-none)
-      - [Expliquation de la fonction](#expliquation-de-la-fonction)
   - [Les listes en Python](#les-listes-en-python)
     - [Qu'est-ce qu'une liste en Python ?](#quest-ce-quune-liste-en-python-)
     - [Afficher une liste](#afficher-une-liste)
@@ -44,13 +43,12 @@
   - [Les boucles](#les-boucles)
     - [En Python](#en-python)
     - [Boucle `for`](#boucle-for)
-      - [Exemple](#exemple)
     - [Boucle `while`](#boucle-while)
-      - [Sortir d'une boucle](#sortir-dune-boucle)
+    - [Sortir d'une boucle](#sortir-dune-boucle)
   - [Résumé de la leçon](#résumé-de-la-leçon)
   - [Exercices pour la prochaine séance](#exercices-pour-la-prochaine-séance)
   - [Extra](#extra)
-- [Leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib](#leçon-3--les-boucles-fonctions-avancées-et-visualisation-avec-matplotlib)
+- [Leçon 3 : Librairie Numpy et visualisation avec Matplotlib](#leçon-3--librairie-numpy-et-visualisation-avec-matplotlib)
 - [Références](#références)
 
 # Introduction
@@ -800,7 +798,8 @@ print(ideal_gas_law(P=1, n=1, T=1), "L")
 print(ideal_gas_law(V=1, n=1, T=1), "atm")
 ```
 
-#### Expliquation de la fonction
+**Explication de la fonction**
+
 La fonction `ideal_gas_law` prend en paramètre les variables `P`, `V`, `n` et `T`. Ces variables sont initialisées à `None` par défaut. Cela permet de ne pas avoir à spécifier tous les paramètres lors de l'appel de la fonction.
 
 > **Nouveauté : Valeur par défaut** <br />
@@ -813,7 +812,10 @@ La fonction `ideal_gas_law` prend en paramètre les variables `P`, `V`, `n` et `
 
 ---
 
+
 ## Les listes en Python
+
+![Alt text](img/liste_epicerie.jpg)
 
 L'une des structures de données les plus fondamentales en Python est la liste, qui peut être un outil puissant pour stocker, organiser et manipuler des données. Dans cette partie, nous explorerons l'utilisation des listes en Python.
 
@@ -949,6 +951,8 @@ Avec la librairie `numpy`, on peut avoir d'autres fonctions utiles :
 
 ## Les boucles
 
+![Alt text](img/PID_loop.svg)
+
 En programmation, il y a un concept qui s'appelle la répétition. Cela permet d'exécuter un bloc de code de manière répétée. 
 
 On appelle cela une boucle. Généralement, on répétera une boucle tant qu'une condition spécifiée est vraie. Cela permet d'automatiser des tâches répétitives et est largement utilisé dans la programmation pour traiter des données, générer des motifs, et bien plus encore.
@@ -984,7 +988,8 @@ for matiere in matieres:
 >
 > Nous y reviendrons plus tard.
 
-#### Exemple
+**Exemple**
+
 Voici un exemple de boucle `for` qui permet de générer un graphique de la fonction $y = x^2$ :
 
 ```python
@@ -1010,6 +1015,44 @@ plt.show()
 
 </details>
 
+Voici un autre exemple où l'on génère le graphique de la demi-vie d'un élément radioactif :
+
+```python
+# Fonction retournant la masse finale d'un échantillon en fonction
+# de sa masse initiale, du temps et de la demi-vie
+def calculer_decroissance_exponentielle(m0, t, demi_vie):
+    return m0 * math.exp(-t / demi_vie)
+
+# Variables
+m0 = 100
+demi_vie = 10
+t = 0
+pas = 1
+
+# Création des listes
+temps = []
+masses = []
+
+# Remplissage des listes
+while t <= 100:
+    temps.append(t)
+    masses.append(calculer_decroissance_exponentielle(m0, t, demi_vie))
+    t += pas
+
+# Affichage du graphique
+plt.plot(temps, masses)
+plt.show()
+```
+
+Si vous copiez le code de cet exemple, il y a aura des erreurs. Pourquoi?
+
+<details><summary>Résultat</summary>
+
+Réponse : Il manque les importations de bibliothèques. Il faut importer `matplotlib.pyplot` et `math`.
+
+![Alt text](img/matplotlib_demievie.png)
+
+</details>
 
 ### Boucle `while`
 
@@ -1109,7 +1152,7 @@ moyenne = somme / nb_notes
 print("La moyenne est", moyenne)
 ```
 
-#### Sortir d'une boucle
+### Sortir d'une boucle
 En plus de la condition de la boucle, on peut utiliser l'instruction `break` pour sortir d'une boucle. Cela peut être utile si on veut sortir d'une boucle avant que la condition ne soit fausse.
 
 Voici un exemple :
@@ -1160,10 +1203,13 @@ Dans votre domaine respectif, à l'aide de fonction et de boucle, vous devez cr�
 ## Extra
 Si le temps nous le permet, faire une démonstration avec l'utilisation de ChatGPT pour nous aider à faire du code.
 
+- Par exemple, ajouter des titres au graphique généré dans l'exemple précédent.
+
+
 ---
 
 
-# Leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib
+# Leçon 3 : Librairie Numpy et visualisation avec Matplotlib
 
 TODO  : À venir - Leçon 3
 
