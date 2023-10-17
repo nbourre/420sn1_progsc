@@ -590,19 +590,29 @@ On utilise parfois un diagramme à flux de données pour représenter les struct
 Voici la **structure générale** de contrôle de flux en Python:
 
 ```py
-if condition:
-    # Instructions
-elif condition: # Optionnel
-    # Instructions
-else: # Optionnel
-    # Instructions
+if condition 1:
+    # Instructions si condition 1 vrai
+
+# Optionnel
+elif condition N: 
+    # Instructions si condition N vrai
+
+# Optionnel
+else: 
+    # Instructions si toutes les conditions sont fausses
 ```
+
+> **Comparaison Excel** <br />
+> `=si(condition; valeur_si_vrai; valeur_si_faux)`<br />
+> ![Alt text](img/99_excel_if.png)<br />
 
 **Seul le `if` est obligatoire**. On peut avoir plusieurs `elif` et un seul `else`. On peut aussi avoir seulement un `if` et un `else`.
 
 > **Note :** Remarquez qu'après la condition, il y a un "`:`". On note aussi que les instructions suivant la condition sont indentées. C'est une syntaxe spécifique à Python.
 > 
 > Le nombre d'espaces standard est de 4 ([Src : PEP 8](https://peps.python.org/pep-0008/#indentation)). Il est aussi possible de mettre des tabulations. Cependant, il faut être cohérent. Il est proscrit de mélanger les espaces et les tabulations.
+
+
 
 Voici un exemple que vous pouvez tester:
 
@@ -1217,6 +1227,11 @@ TODO  : À venir - Leçon 3
 ---
 
 # Références
+- [W3Schools](https://www.w3schools.com/python/)
+  - Très bon site pour apprendre un langage de programmation
 - [Python Graph Gallery](https://python-graph-gallery.com/)
+  - Exemple de graphiques avec le code pour les générer
 - [PASCO Python Examples](https://github.com/PASCOscientific/pasco_python_examples)
+  - Exemple d'utilisation de Python avec les appareils PASCO
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/#toc)
+  - Livre gratuit sur Python pour simplifier les tâches répétitives
