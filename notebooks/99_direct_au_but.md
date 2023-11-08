@@ -710,7 +710,7 @@ else:
 
 > **Attention erreur fréquente!** <br />
 > Dans les expressions conditionnelles, on utilise `==` pour vérifier l'égalité. On utilise `=` pour assigner une valeur à une variable. <br />
-> Si vous trouvez que votre code ne fonctionne pas, vérifiez que vous n'avez pas utilisé `=` au lieu de `==`.
+> Si votre code ne fonctionne pas, vérifiez que vous n'avez pas utilisé `=` au lieu de `==`.
 
 #### Table de vérité 
 Voici un petit rappel de la table de vérité pour les opérateurs logiques `and` et `or` :
