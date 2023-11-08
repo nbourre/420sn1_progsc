@@ -1222,7 +1222,7 @@ Si le temps nous le permet, faire une démonstration avec l'utilisation de ChatG
 # Leçon 3 : Librairie Numpy et visualisation avec Matplotlib
 
 TODO  : À venir - Leçon 3
-
+TODO : Retirer les éléments d'une liste répondant à une condition
 
 ---
 
