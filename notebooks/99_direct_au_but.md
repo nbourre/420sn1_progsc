@@ -1235,3 +1235,4 @@ TODO  : À venir - Leçon 3
   - Exemple d'utilisation de Python avec les appareils PASCO
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/#toc)
   - Livre gratuit sur Python pour simplifier les tâches répétitives
+- [Print lists in Python using 4 differents](https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/)
