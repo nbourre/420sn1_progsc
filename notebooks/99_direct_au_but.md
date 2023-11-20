@@ -52,6 +52,7 @@
   - [Résumé de la leçon](#résumé-de-la-leçon-1)
   - [Exercices](#exercices)
   - [Extra](#extra)
+- [Leçon 3 : Librairie Numpy et visualisation avec Matplotlib](#leçon-3--librairie-numpy-et-visualisation-avec-matplotlib)
 - [Références](#références)
 
 # Introduction
@@ -713,7 +714,7 @@ else:
 
 > **Attention erreur fréquente!** <br />
 > Dans les expressions conditionnelles, on utilise `==` pour vérifier l'égalité. On utilise `=` pour assigner une valeur à une variable. <br />
-> Si vous trouvez que votre code ne fonctionne pas, vérifiez que vous n'avez pas utilisé `=` au lieu de `==`.
+> Si votre code ne fonctionne pas, vérifiez que vous n'avez pas utilisé `=` au lieu de `==`.
 
 #### Table de vérité 
 Voici un petit rappel de la table de vérité pour les opérateurs logiques `and` et `or` :
@@ -1286,6 +1287,15 @@ Si le temps nous le permet, faire une démonstration avec l'utilisation de ChatG
 
 - Par exemple, ajouter des titres au graphique généré dans l'exemple précédent.
 
+
+---
+
+
+# Leçon 3 : Librairie Numpy et visualisation avec Matplotlib
+
+TODO  : À venir - Leçon 3
+TODO : Retirer les éléments d'une liste répondant à une condition
+
 ---
 
 # Références
@@ -1297,3 +1307,4 @@ Si le temps nous le permet, faire une démonstration avec l'utilisation de ChatG
   - Exemple d'utilisation de Python avec les appareils PASCO
 - [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/#toc)
   - Livre gratuit sur Python pour simplifier les tâches répétitives
+- [Print lists in Python using 4 differents](https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways/)
