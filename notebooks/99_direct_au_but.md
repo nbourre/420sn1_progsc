@@ -40,15 +40,18 @@
       - [Ajouter et supprimer des éléments](#ajouter-et-supprimer-des-éléments)
       - [Calculer des statistiques](#calculer-des-statistiques)
     - [Résumé des fonctions utiles pour les listes](#résumé-des-fonctions-utiles-pour-les-listes)
+  - [Résumé de la leçon](#résumé-de-la-leçon)
+  - [Exercices pour la prochaine séance](#exercices-pour-la-prochaine-séance)
+- [Leçon 3 : Les boucles et les graphiques](#leçon-3--les-boucles-et-les-graphiques)
   - [Les boucles](#les-boucles)
-    - [En Python](#en-python)
     - [Boucle `for`](#boucle-for)
     - [Boucle `while`](#boucle-while)
     - [Sortir d'une boucle](#sortir-dune-boucle)
-  - [Résumé de la leçon](#résumé-de-la-leçon)
-  - [Exercices pour la prochaine séance](#exercices-pour-la-prochaine-séance)
+  - [Les graphiques avec `matplotlib`](#les-graphiques-avec-matplotlib)
+    - [Graphique simple](#graphique-simple)
+  - [Résumé de la leçon](#résumé-de-la-leçon-1)
+  - [Exercices](#exercices)
   - [Extra](#extra)
-- [Leçon 3 : Librairie Numpy et visualisation avec Matplotlib](#leçon-3--librairie-numpy-et-visualisation-avec-matplotlib)
 - [Références](#références)
 
 # Introduction
@@ -959,9 +962,28 @@ Avec la librairie `numpy`, on peut avoir d'autres fonctions utiles :
 
 ---
 
+## Résumé de la leçon
+Dans cette leçon, nous avons appris à utiliser les structures de contrôle de flux, les listes en Python et la valeur `None`.
+
+Les structures de contrôle de flux permettent de contrôler l'exécution du code. Elles permettent de faire des choix selon des conditions. Elles permettent aussi de répéter des instructions.
+
+Les listes sont une structure de données qui permet de stocker des données dans un objet. Elles permettent de manipuler des données de différentes manières.
+
+
+## Exercices pour la prochaine séance
+Dans votre domaine respectif, à l'aide de fonction, de `if` et de `None`, vous devez créer un programme qui permet résoudre un problème dont on ne connaît pas toutes les données d'entrée. Par exemple, en physique, on peut calculer la vitesse finale d'un objet en chute libre en fonction de la hauteur de départ.
+
+
+---
+
+
+# Leçon 3 : Les boucles et les graphiques
+
+Dans cette leçon, nous allons apprendre à utiliser les boucles et réaliser des graphiques en Python.
+
 ## Les boucles
 
-![Alt text](img/PID_loop.svg)
+![Boucle de contrôle PID (proportionnelle, intégrale et différentielle)](img/PID_loop.svg)
 
 En programmation, il y a un concept qui s'appelle la répétition. Cela permet d'exécuter un bloc de code de manière répétée. 
 
@@ -969,15 +991,15 @@ On appelle cela une boucle. Généralement, on répétera une boucle tant qu'une
 
 Imaginez que vous ayez une tâche à accomplir plusieurs fois, comme compter de 1 à 100 ou afficher un message plusieurs fois. Plutôt que de copier et coller le même code encore et encore, vous pouvez utiliser une boucle pour effectuer cette tâche de manière efficace.
 
-### En Python
-
 En Python, il existe deux principales structures de boucles, à savoir les boucles `for` et `while`. Chacune de ces structures est utilisée pour répéter un bloc de code plusieurs fois, mais elles sont utilisées dans des contextes légèrement différents en fonction des besoins spécifiques du programme.
 
 ### Boucle `for`
 
 La boucle `for` est utilisée pour itérer sur une séquence (qui peut être une liste, un tuple, un dictionnaire, un ensemble ou une chaîne). Elle est souvent utilisée quand nous savons à l'avance combien de fois nous voulons que le bloc de code soit exécuté.
 
-Exemple basique d'utilisation d'une boucle `for`:
+> **Note :** Dans le paragraphe précédent, on mentionne les mots `liste`, `tuple`, `dictionnaire`, `ensemble` et `chaîne`. Ce sont des structures de données que nous verrons plus tard. Pour l'instant, vous pouvez les considérer comme des collections de données.
+
+Exemple de base qui utilise une boucle `for`:
 
 ```python
 for i in range(5):  # i prend les valeurs de 0 à 4
@@ -1019,11 +1041,15 @@ plt.plot(x, y)
 plt.show()
 ```
 
-<details><summary>Résultat</summary>
+On se rappelle que `append()` permet d'ajouter un élément à la fin d'une liste. (Voir le tableau [ici](#résumé-des-fonctions-utiles-pour-les-listes))
+
+<details><summary>Cliquer pour voir le résultat</summary>
 
 ![Alt text](img/matplotlib_graphique.png)
 
 </details>
+
+---
 
 Voici un autre exemple où l'on génère le graphique de la demi-vie d'un élément radioactif :
 
@@ -1054,15 +1080,17 @@ plt.plot(temps, masses)
 plt.show()
 ```
 
-Si vous copiez le code de cet exemple, il y a aura des erreurs. Pourquoi?
+**Note :** Si vous copiez le code de cet exemple, il y a aura des erreurs. Pourquoi?
 
-<details><summary>Résultat</summary>
+<details><summary>Réponse ici et résultat</summary>
 
-Réponse : Il manque les importations de bibliothèques. Il faut importer `matplotlib.pyplot` et `math`.
+Réponse : Il manque les importations de bibliothèques. Il ne faut pas oublier d'importer `matplotlib.pyplot` et `math`.
 
 ![Alt text](img/matplotlib_demievie.png)
 
 </details>
+
+---
 
 ### Boucle `while`
 
@@ -1076,23 +1104,36 @@ Voici quelques exemples de code utilisant une boucle `while` :
 
 ```python
 # Fonction qui affiche la somme des nombres de a à b
-def calculer_somme_entre_borne(a, b):
-    i = a
+def calculer_somme_entre_borne(limite_inf, limite_sup):
+    
+    # Validation pour éviter des erreurs
+    if not (isinstance(limite_inf, int) and isinstance(limite_sup, int)):
+        return "Les deux limites doivent être de valeur entière."
+
+    if limite_inf > limite_sup:
+        return "La limite inférieure doit être plus petite que la limite supérieure."
+    
+    i = limite_inf
     somme = 0
 
-    while i <= b:
+    while i <= limite_sup:
         somme += i # Équivaut à somme = somme + i
         i += 1
 
     return somme
 
 lim_inf = 1
-lim_sup = 20
+lim_sup = 5
 
 print ("Afficher la somme des nombres de", lim_inf, "à", lim_sup)
 print ("Somme =", calculer_somme_entre_borne(lim_inf, lim_sup))
 
 ```
+
+> **Nouveauté!** <br />
+> `isinstance()` est une fonction qui permet de vérifier le type d'une variable. Cette fonction retourne une valeur booléene.<br />
+
+---
 
 Voici un autre exemple de boucle `while` qui permet de calculer la vitesse finale d'un objet :
 
@@ -1118,10 +1159,14 @@ t = float(input("Entrez la durée en seconde : "))
 calculer_vf(v0, a, t)
 ```
 
-> ***Nouveauté :*** La fonction `input()` permet de demander une entrée à l'utilisateur. Elle retourne une chaîne de caractères. On doit donc convertir la chaîne de caractères en nombre pour pouvoir faire des calculs avec.
+> ***Nouveauté!*** <br/>
+> La fonction `input()` permet de demander une entrée à l'utilisateur. Elle retourne une chaîne de caractères. On doit donc convertir la chaîne de caractères en nombre pour pouvoir faire des calculs avec.
 > 
 
-> ***Nouveauté :*** La fonction `float()` permet de convertir une chaîne de caractères en nombre à virgule flottante. Il existe aussi la fonction `int()` pour convertir une chaîne de caractères en nombre entier.
+> ***Nouveauté!*** <br/>
+> La fonction `float()` permet de convertir une chaîne de caractères en nombre à virgule flottante. Il existe aussi la fonction `int()` pour convertir une chaîne de caractères en nombre entier.
+
+---
 
 Voici un exemple de boucle qui ne s'arrête que si la seconde entrée est plus grande que la première :
 
@@ -1140,6 +1185,8 @@ while a >= b:
     b = float(input("Entrez un autre nombre : "))
 
 ```
+
+---
 
 Voici un autre exemple qui calcule la moyenne de notes entrées par l'utilisateur :
 
@@ -1181,6 +1228,7 @@ while True:
     if a == 'q' or b == 'q':
         break
 
+    # Convertir les chaînes de caractères en nombre
     a = float (a)
     b = float (b)
 
@@ -1193,18 +1241,41 @@ while True:
 
 
 ```
+## Les graphiques avec `matplotlib`
+
+![Alt text](img/matplotlib_sin_anim.gif)
+
+ Nous avons vu quelques exemples dans les sections précédentes où nous avons utilisé `matplotlib` pour générer des graphiques. Dans cette section, nous allons apprendre à utiliser la librairie `matplotlib` pour générer des graphiques.
+
+### Graphique simple
+Voici un exemple de graphique simple :
+
+```python
+import matplotlib.pyplot as plt
+
+# Création des listes
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+# Affichage du graphique
+plt.plot(x, y)
+plt.show()
+```
+---
+Voici le résultat attendu
+
+![Résultat attendu](img/matplotlib_prof_01.png)
+
+
+---
 
 ## Résumé de la leçon
-Dans cette leçon, nous avons appris à utiliser les structures de contrôle de flux, les listes en Python et les boucles.
+Dans cette leçon, nous avons appris à utiliser les boucles `for` et `while` en Python.
 
-Les structures de contrôle de flux permettent de contrôler l'exécution du code. Elles permettent de faire des choix selon des conditions. Elles permettent aussi de répéter des instructions.
+TODO : Résumé
 
-Les listes sont une structure de données qui permet de stocker des données dans un objet. Elles permettent de manipuler des données de différentes manières.
-
-Les boucles permettent de répéter un bloc de code plusieurs fois. Il existe deux types de boucles en Python : la boucle `for` et la boucle `while`.
-
-## Exercices pour la prochaine séance
-Dans votre domaine respectif, à l'aide de fonction et de boucle, vous devez créer un programme qui permet de générer des données.
+## Exercices
+TODO : Exercices
 
 **Défi supplémentaire**
 - Afficher le graphique en utilisant la librairie `matplotlib`.
@@ -1214,15 +1285,6 @@ Dans votre domaine respectif, à l'aide de fonction et de boucle, vous devez cr�
 Si le temps nous le permet, faire une démonstration avec l'utilisation de ChatGPT pour nous aider à faire du code.
 
 - Par exemple, ajouter des titres au graphique généré dans l'exemple précédent.
-
-
----
-
-
-# Leçon 3 : Librairie Numpy et visualisation avec Matplotlib
-
-TODO  : À venir - Leçon 3
-
 
 ---
 
