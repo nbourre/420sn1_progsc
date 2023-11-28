@@ -44,15 +44,15 @@
   - [Exercices pour la prochaine séance](#exercices-pour-la-prochaine-séance)
 - [Leçon 3 : Les boucles et les graphiques](#leçon-3--les-boucles-et-les-graphiques)
   - [Les boucles](#les-boucles)
-    - [Boucle `for`](#boucle-for)
-    - [Boucle `while`](#boucle-while)
-    - [Sortir d'une boucle](#sortir-dune-boucle)
+  - [Boucle `for`](#boucle-for)
+  - [Boucle `while`](#boucle-while)
+  - [Sortir d'une boucle avec `break`](#sortir-dune-boucle-avec-break)
   - [Les graphiques avec `matplotlib`](#les-graphiques-avec-matplotlib)
     - [Graphique simple](#graphique-simple)
+    - [Les titres et les étiquettes](#les-titres-et-les-étiquettes)
   - [Résumé de la leçon](#résumé-de-la-leçon-1)
   - [Exercices](#exercices)
   - [Extra](#extra)
-- [Leçon 3 : Librairie Numpy et visualisation avec Matplotlib](#leçon-3--librairie-numpy-et-visualisation-avec-matplotlib)
 - [Références](#références)
 
 # Introduction
@@ -980,7 +980,9 @@ Dans votre domaine respectif, à l'aide de fonction, de `if` et de `None`, vous 
 
 # Leçon 3 : Les boucles et les graphiques
 
-Dans cette leçon, nous allons apprendre à utiliser les boucles et réaliser des graphiques en Python.
+TODO : Retirer les éléments d'une liste répondant à une condition
+
+Dans cette leçon, nous allons apprendre à utiliser les boucles et réaliser des graphiques de base en Python.
 
 ## Les boucles
 
@@ -988,13 +990,16 @@ Dans cette leçon, nous allons apprendre à utiliser les boucles et réaliser de
 
 En programmation, il y a un concept qui s'appelle la répétition. Cela permet d'exécuter un bloc de code de manière répétée. 
 
-On appelle cela une boucle. Généralement, on répétera une boucle tant qu'une condition spécifiée est vraie. Cela permet d'automatiser des tâches répétitives et est largement utilisé dans la programmation pour traiter des données, générer des motifs, et bien plus encore.
+On appelle cela une **boucle**. Généralement, on répétera une boucle tant qu'une condition spécifiée est vraie. Cela permet d'automatiser des tâches répétitives et est largement utilisé dans la programmation pour traiter des données, générer des motifs, et bien plus encore.
 
 Imaginez que vous ayez une tâche à accomplir plusieurs fois, comme compter de 1 à 100 ou afficher un message plusieurs fois. Plutôt que de copier et coller le même code encore et encore, vous pouvez utiliser une boucle pour effectuer cette tâche de manière efficace.
 
 En Python, il existe deux principales structures de boucles, à savoir les boucles `for` et `while`. Chacune de ces structures est utilisée pour répéter un bloc de code plusieurs fois, mais elles sont utilisées dans des contextes légèrement différents en fonction des besoins spécifiques du programme.
 
-### Boucle `for`
+> **Note :** Pour les utilisateurs Excel, il n'y a pas de concept de boucle à proprement parler. Il faut utiliser un arrangement de plages de cellules pour simuler une boucle.
+
+
+## Boucle `for`
 
 La boucle `for` est utilisée pour itérer sur une séquence (qui peut être une liste, un tuple, un dictionnaire, un ensemble ou une chaîne). Elle est souvent utilisée quand nous savons à l'avance combien de fois nous voulons que le bloc de code soit exécuté.
 
@@ -1015,10 +1020,10 @@ for matiere in matieres:
     print(matiere)
 ```
 
-> ***Nouveauté :*** `range(a, b)` est une fonction qui retourne une séquence de nombres de `a` à `b` où `b` est exclusif. On peut la traduire la plage de nombre entre `a` et `b` exclusif.
+> ***Nouveauté :*** `range(a, b)` est une fonction qui retourne une séquence de nombres de `a` à `b` où **`b` est exclusif**. On peut la traduire la plage de nombre entre `a` et `b` exclusif.
 > 
-> On peut aussi utiliser `range(6)` pour avoir une séquence de nombres de 0 à 5.
->
+> On peut aussi utiliser `range(6)` pour avoir une séquence de nombres de 0 à 5 où le paramètre `a` est implicite et a la valeur 0 par défaut. Ainsi c'est l'équivalent de `range(0, 6)`.
+> 
 > Nous y reviendrons plus tard.
 
 **Exemple**
@@ -1028,13 +1033,13 @@ Voici un exemple de boucle `for` qui permet de générer un graphique de la fonc
 ```python
 import matplotlib.pyplot as plt
 
-# Création des listes
+# Création des listes vides
 x = []
 y = []
 
 # Remplissage des listes
 for i in range(-10, 11):
-    x.append(i)
+    x.append(i) 
     y.append(i**2)
 
 # Affichage du graphique
@@ -1042,7 +1047,8 @@ plt.plot(x, y)
 plt.show()
 ```
 
-On se rappelle que `append()` permet d'ajouter un élément à la fin d'une liste. (Voir le tableau [ici](#résumé-des-fonctions-utiles-pour-les-listes))
+- On se rappelle que `append()` permet d'ajouter un élément à la fin d'une liste. (Voir le tableau [ici](#résumé-des-fonctions-utiles-pour-les-listes))
+- Pour le `y`, on pourrait mettre une autre fonction pour représenter une autre courbe. Par exemple, on pourrait mettre `y.append(i**3)` pour représenter la fonction $y = x^3$.
 
 <details><summary>Cliquer pour voir le résultat</summary>
 
@@ -1050,50 +1056,10 @@ On se rappelle que `append()` permet d'ajouter un élément à la fin d'une list
 
 </details>
 
----
-
-Voici un autre exemple où l'on génère le graphique de la demi-vie d'un élément radioactif :
-
-```python
-# Fonction retournant la masse finale d'un échantillon en fonction
-# de sa masse initiale, du temps et de la demi-vie
-def calculer_decroissance_exponentielle(m0, t, demi_vie):
-    return m0 * math.exp(-t / demi_vie)
-
-# Variables
-m0 = 100
-demi_vie = 10
-t = 0
-pas = 1
-
-# Création des listes
-temps = []
-masses = []
-
-# Remplissage des listes
-while t <= 100:
-    temps.append(t)
-    masses.append(calculer_decroissance_exponentielle(m0, t, demi_vie))
-    t += pas
-
-# Affichage du graphique
-plt.plot(temps, masses)
-plt.show()
-```
-
-**Note :** Si vous copiez le code de cet exemple, il y a aura des erreurs. Pourquoi?
-
-<details><summary>Réponse ici et résultat</summary>
-
-Réponse : Il manque les importations de bibliothèques. Il ne faut pas oublier d'importer `matplotlib.pyplot` et `math`.
-
-![Alt text](img/matplotlib_demievie.png)
-
-</details>
 
 ---
 
-### Boucle `while`
+## Boucle `while`
 
 La boucle `while` est utilisée pour exécuter un bloc de code tant qu'une condition spécifiée est vraie. Elle vérifie la condition avant d'entrer dans la boucle à chaque itération.
 
@@ -1109,10 +1075,10 @@ def calculer_somme_entre_borne(limite_inf, limite_sup):
     
     # Validation pour éviter des erreurs
     if not (isinstance(limite_inf, int) and isinstance(limite_sup, int)):
-        return "Les deux limites doivent être de valeur entière."
+        return "Erreur! Les deux limites doivent être de valeur entière."
 
     if limite_inf > limite_sup:
-        return "La limite inférieure doit être plus petite que la limite supérieure."
+        return "Erreur! La limite inférieure doit être plus petite que la limite supérieure."
     
     i = limite_inf
     somme = 0
@@ -1133,6 +1099,21 @@ print ("Somme =", calculer_somme_entre_borne(lim_inf, lim_sup))
 
 > **Nouveauté!** <br />
 > `isinstance()` est une fonction qui permet de vérifier le type d'une variable. Cette fonction retourne une valeur booléene.<br />
+> 
+> Les principaux types de données sont : 
+> | Type | Description |
+> | :--: | :---------- |
+> | `int` | Nombre entier |
+> | `float` | Nombre à virgule flottante |
+> | `str` | Chaîne de caractères |
+> | `bool` | Booléen |
+> | `list` | Liste |
+> | `tuple` | Tuple |
+> | `dict` | Dictionnaire |
+> | `set` | Ensemble |
+> | `NoneType` | Valeur `None` |
+>
+   
 
 ---
 
@@ -1210,7 +1191,47 @@ moyenne = somme / nb_notes
 print("La moyenne est", moyenne)
 ```
 
-### Sortir d'une boucle
+
+Voici un autre exemple où l'on génère le graphique de la demi-vie d'un élément radioactif :
+
+```python
+# Fonction retournant la masse finale d'un échantillon en fonction
+# de sa masse initiale, du temps et de la demi-vie
+def calculer_decroissance_exponentielle(m0, t, demi_vie):
+    return m0 * math.exp(-t / demi_vie)
+
+# Variables
+m0 = 100
+demi_vie = 10
+t = 0
+pas = 1
+
+# Création des listes
+temps = []
+masses = []
+
+# Remplissage des listes
+while t <= 100:
+    temps.append(t)
+    masses.append(calculer_decroissance_exponentielle(m0, t, demi_vie))
+    t += pas
+
+# Affichage du graphique
+plt.plot(temps, masses)
+plt.show()
+```
+
+**Note :** Si vous copiez le code de cet exemple, il y a aura des erreurs. Pourquoi?
+
+<details><summary>Réponse ici et résultat</summary>
+
+Réponse : Il manque les importations de bibliothèques. Il ne faut pas oublier d'importer `matplotlib.pyplot` et `math`.
+
+![Alt text](img/matplotlib_demievie.png)
+
+</details>
+
+## Sortir d'une boucle avec `break`
 En plus de la condition de la boucle, on peut utiliser l'instruction `break` pour sortir d'une boucle. Cela peut être utile si on veut sortir d'une boucle avant que la condition ne soit fausse.
 
 Voici un exemple :
@@ -1267,8 +1288,32 @@ Voici le résultat attendu
 
 ![Résultat attendu](img/matplotlib_prof_01.png)
 
-
 ---
+
+### Les titres et les étiquettes
+On peut ajouter des titres et des étiquettes aux axes du graphique avec différentes fonctions.
+
+Voici un exemple :
+
+```python
+import matplotlib.pyplot as plt
+
+# Création des listes
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+# Affichage du graphique
+plt.plot(x, y)
+
+# Ajout d'un titre
+plt.title("Titre du graphique")
+
+# Ajout d'étiquettes aux axes
+plt.xlabel("Axe des x")
+plt.ylabel("Axe des y")
+
+plt.show()
+```
 
 ## Résumé de la leçon
 Dans cette leçon, nous avons appris à utiliser les boucles `for` et `while` en Python.
@@ -1291,10 +1336,7 @@ Si le temps nous le permet, faire une démonstration avec l'utilisation de ChatG
 ---
 
 
-# Leçon 3 : Librairie Numpy et visualisation avec Matplotlib
 
-TODO  : À venir - Leçon 3
-TODO : Retirer les éléments d'une liste répondant à une condition
 
 ---
 
