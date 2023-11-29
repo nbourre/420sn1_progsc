@@ -49,10 +49,15 @@
   - [Sortir d'une boucle avec `break`](#sortir-dune-boucle-avec-break)
   - [Les graphiques avec `matplotlib`](#les-graphiques-avec-matplotlib)
     - [Graphique simple](#graphique-simple)
-    - [Les titres et les étiquettes](#les-titres-et-les-étiquettes)
+    - [Les titres](#les-titres)
+    - [Échelle des axes](#échelle-des-axes)
+    - [Plusieurs séries et légende](#plusieurs-séries-et-légende)
+    - [Autres types de graphiques](#autres-types-de-graphiques)
+    - [Plusieurs graphiques avec `subplot()`](#plusieurs-graphiques-avec-subplot)
+    - [Grillages](#grillages)
   - [Résumé de la leçon](#résumé-de-la-leçon-1)
-  - [Exercices](#exercices)
-  - [Extra](#extra)
+  - [Leçon 3 : Exercices](#leçon-3--exercices)
+- [Leçon 4 : À venir](#leçon-4--à-venir)
 - [Références](#références)
 
 # Introduction
@@ -1260,9 +1265,8 @@ while True:
         print("Le deuxième nombre est plus grand.")
     else:
         print("Les deux nombres sont égaux.")
-
-
 ```
+
 ## Les graphiques avec `matplotlib`
 
 ![Alt text](img/matplotlib_sin_anim.gif)
@@ -1290,8 +1294,8 @@ Voici le résultat attendu
 
 ---
 
-### Les titres et les étiquettes
-On peut ajouter des titres et des étiquettes aux axes du graphique avec différentes fonctions.
+### Les titres
+On peut ajouter des titres et des étiquettes aux axes du graphique avec les fonctions `title()`, `xlabel()` et `ylabel()`.
 
 Voici un exemple :
 
@@ -1315,26 +1319,266 @@ plt.ylabel("Axe des y")
 plt.show()
 ```
 
-## Résumé de la leçon
-Dans cette leçon, nous avons appris à utiliser les boucles `for` et `while` en Python.
-
-TODO : Résumé
-
-## Exercices
-TODO : Exercices
-
-**Défi supplémentaire**
-- Afficher le graphique en utilisant la librairie `matplotlib`.
-- Afficher les données pour qu'elles soient copiables dans Excel.
-
-## Extra
-Si le temps nous le permet, faire une démonstration avec l'utilisation de ChatGPT pour nous aider à faire du code.
-
-- Par exemple, ajouter des titres au graphique généré dans l'exemple précédent.
-
+![Alt text](img/matplotlib_titre_axes.png)
 
 ---
 
+### Échelle des axes
+
+Avec la fonction `axis()`, on peut modifier l'échelle des axes. Par exemple, on peut mettre l'échelle de 0 à 6 pour l'axe des x et de 0 à 30 pour l'axe des y.
+
+```python
+import matplotlib.pyplot as plt
+
+# Création des listes
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+# Affichage du graphique
+plt.plot(x, y)
+
+# Ajout d'un titre
+plt.title("Titre du graphique")
+
+# Ajout d'étiquettes aux axes
+plt.xlabel("Axe des x")
+plt.ylabel("Axe des y")
+
+# Modification de l'échelle des axes
+plt.axis([0, 6, 0, 30])
+
+plt.show()
+```
+
+### Plusieurs séries et légende
+
+Avec la fonction `legend()`, on peut ajouter une légende au graphique. Il faut spécifier les noms des courbes dans la fonction `plot()` et les noms des courbes dans la fonction `legend()`.
+
+```python
+import matplotlib.pyplot as plt
+
+# Création des listes
+x = [1, 2, 3, 4, 5]
+y1 = [1, 4, 9, 16, 25]
+y2 = [1, 8, 27, 64, 125] # 2e série de données
+
+# Affichage du graphique
+plt.plot(x, y1, label="y1")
+plt.plot(x, y2, label="y2")
+
+# Ajout d'un titre
+plt.title("Titre du graphique")
+
+# Ajout d'étiquettes aux axes
+plt.xlabel("Axe des x")
+plt.ylabel("Axe des y")
+
+# Modification de l'échelle des axes
+plt.axis([0, 6, 0, 30])
+
+# Ajout de la légende
+plt.legend()
+
+plt.show()
+```
+
+### Autres types de graphiques
+Évidemment, on peut réaliser plusieurs types de graphiques avec `matplotlib`. Voici quelques exemples :
+
+**Graphique à barres**
+
+```python
+import matplotlib.pyplot as plt
+
+# Création des listes
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+plt.bar(x, y)
+
+plt.show()
+```
+
+**Graphique à barres horizontales**
+
+```python
+import matplotlib.pyplot as plt
+
+# Création des listes
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+# Graphique à barres horizontales
+plt.barh(x, y)
+
+plt.show()
+```
+
+**Graphique à secteurs**
+
+```python
+import matplotlib.pyplot as plt
+
+# Création des listes
+x = [1, 2, 3, 4, 5]
+y = [1, 4, 9, 16, 25]
+
+# autopct='%1.1f%%' permet d'afficher le pourcentage et est optionnel
+plt.pie(y, labels=x, autopct='%1.1f%%')
+
+plt.show()
+```
+
+### Plusieurs graphiques avec `subplot()`
+On peut afficher plusieurs graphiques dans une même fenêtre avec la fonction `subplot()`. Il faut spécifier le nombre de lignes, le nombre de colonnes et le numéro du graphique.
+
+```python
+mport matplotlib.pyplot as plt
+import numpy as np
+
+# Création des listes
+x = [1, 2, 3, 4, 5]
+y1 = [1, 4, 9, 16, 25]
+y2 = [125, 64, 27, 8, 1]
+
+# Créer un ensemble de valeurs x de 0 à 2*pi
+x3 = np.linspace(0, 2 * np.pi, 100)
+y3 = np.cos(x3) * 50
+y4 = np.tan(x3)
+
+# Configuration du graphique
+# 2 ligne, 2 colonnes, graphique 1
+plt.subplot(2, 2, 1)
+plt.pie(y1, labels=x, autopct='%1.1f%%')
+plt.title("Graphique en secteur")
+plt.legend()
+
+# 2 ligne, 2 colonnes, graphique 2
+plt.subplot(2, 2, 2)
+plt.plot(x, y2, label="y2")
+plt.title("Graphique en ligne")
+plt.xlabel("Axe des x")
+plt.ylabel("Axe des y")
+
+# Paramètres de la distribution normale
+mean = 170
+stddev = 7
+
+# Générer des données aléatoires suivant cette distribution
+data = np.random.normal(mean, stddev, 1000)
+
+# 2 ligne, 2 colonnes, graphique 3
+plt.subplot(2, 2, 3)
+
+# Tracer l'histogramme
+plt.hist(data, bins=30, color='blue')
+
+plt.title("Distribution normale avec $\mu=170, \sigma=7$")
+plt.xlabel("Valeur")
+plt.ylabel("Fréquence")
+
+# 2 ligne, 2 colonnes, graphique 3
+plt.subplot(2, 2, 4)
+plt.plot(x3, y4, label="tan")
+plt.plot(x3, y3, label="$10*cos$")
+plt.title("Tangente de $0 à 2\pi$")
+plt.xlabel("Axe des x")
+plt.ylabel("Axe des y")
+plt.legend()
+
+plt.show()
+```
+
+- On remarque que la configuration doit être séquentielle. On ne peut pas mettre le graphique 2 avant le graphique 1.
+- On doit activer le bon graphique avec `plt.subplot(ligne, colonne, no_graph)` avant de faire les opérations sur le graphique.
+
+**Questions**<br/>
+1. Qu'est-ce qu'il y a de nouveau dans cet exemple?
+2. Quel sera le résultat de cet exemple?
+3. Qu'est-ce que la fonction `linspace()` fait?
+4. Qu'est-ce que la fonction `np.random.normal()` fait?
+
+
+<details><summary><b>Réponses</b></summary>
+
+> 1. On utilise la fonction `subplot()` pour afficher plusieurs graphiques dans une même fenêtre et activer le graphique sur lequel on veut travailler.
+> 2. On aura 4 graphiques dans une même fenêtre avec des propriétés différentes.
+> 3. La fonction `linspace()` permet de générer un espace linéaire soit une séquence de nombres de 0 à 2$\pi$ avec 100 valeurs.
+> 4. La fonction `np.random.normal()` permet de générer des nombres aléatoires suivant une distribution normale. On peut spécifier la moyenne, l'écart-type de la distribution et le nombre de valeurs à générer.
+
+![Alt text](img/matplotlib_multiple_graph.png)
+
+</details>
+
+### Grillages
+On peut ajouter des grillages avec la fonction `grid()`.
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Créer un ensemble de valeurs x de 0 à 4*pi
+x = np.linspace(0, 4 * np.pi, 500)
+
+# Calculer les valeurs cosinus et -sinus de x
+y_cos = np.cos(x)
+y_sin_derivative = -np.sin(x)
+
+# Tracer le cosinus
+plt.plot(x, y_cos, label='cos(x)')
+
+# Tracer sa dérivée
+plt.plot(x, y_sin_derivative, label='-sin(x)', linestyle='--')
+
+# Ajouter des légendes et des titres
+plt.title("Cosinus et sa Dérivée")
+plt.xlabel("x")
+plt.ylabel("y")
+
+# Ajouter le grillage
+plt.xticks(np.arange(0, 4 * np.pi + 0.1, np.pi / 4), 
+           ['0', r'$\frac{1}{4}\pi$', r'$\frac{1}{2}\pi$', r'$\frac{3}{4}\pi$',
+            r'$\pi$', r'$\frac{5}{4}\pi$', r'$\frac{3}{2}\pi$', r'$\frac{7}{4}\pi$', 
+            r'$2\pi$', r'$\frac{9}{4}\pi$', r'$\frac{5}{2}\pi$', r'$\frac{11}{4}\pi$', 
+            r'$3\pi$', r'$\frac{13}{4}\pi$', r'$\frac{7}{2}\pi$', r'$\frac{15}{4}\pi$', 
+            r'$4\pi$'])
+
+# Version avec fonction
+#xticks = np.arange(0, 4 * np.pi + 0.1, np.pi / 4)
+#xtick_labels = [r"${{\frac{{{n}}}{{4}}\pi }}$" if n > 0 else "0" for n in range(len(xticks))]
+#plt.xticks(xticks, xtick_labels)
+
+plt.grid(color='gray', linestyle=':', linewidth=0.5)
+plt.legend()
+
+# Afficher le graphique
+plt.show()
+
+```
+
+![Alt text](img/matplotlib_grid.png)
+
+## Résumé de la leçon
+Dans cette leçon, nous avons appris à utiliser les boucles `for` et `while` ainsi que la librairie `matplotlib` pour générer des graphiques. Par la bande, nous avons aussi appris à utiliser des fonctions de la librairie `numpy` pour générer des données.
+
+Ces éléments adaptés à votre domaine vous permettront d'automatiser des tâches répétitives et de générer des graphiques pour visualiser des données.
+
+Dans la prochaine leçon, nous allons voir comment utiliser des fichiers pour travailler avec des données. On verra comment charger un fichier et comment enregistrer des données dans un fichier.
+
+De plus, j'aimerais que l'on explore l'utilisation de ChatGPT pour nous aider à faire du code.
+
+## Leçon 3 : Exercices
+1. À l'aide d'un problème de votre domaine, créer un programme qui permet de générer une ou plusieurs séries de données. Afficher le résultat des données dans la console.
+2. Avec l'exercice précédent, tracer le graphique adapté pour les données générées.
+3. Trouver un nouvel élément en lien avec cette leçon, mais que l'on n'a pas vu. Expliquer son fonctionnement et donner un exemple d'utilisation.
+
+---
+
+# Leçon 4 : À venir
+- TODO : Utiliser ChatGPT pour nous aider à faire du code
+- TODO : Lire un fichier local
+- TODO : Afficher les données pour qu'elles soient copiables dans Excel.
+- TODO : Enregistrer des données dans un fichier CSV et Excel
 
 
 
