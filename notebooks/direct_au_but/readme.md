@@ -57,7 +57,11 @@
     - [Grillages](#grillages)
   - [Résumé de la leçon](#résumé-de-la-leçon-1)
   - [Leçon 3 : Exercices](#leçon-3--exercices)
-- [Leçon 4 : À venir](#leçon-4--à-venir)
+- [Leçon 4 : Manipulation de données](#leçon-4--manipulation-de-données)
+  - [Objectifs](#objectifs-2)
+  - [Lire des fichiers locaux](#lire-des-fichiers-locaux)
+    - [Lire un fichier texte](#lire-un-fichier-texte)
+- [Leçon bonus : ChatGPT](#leçon-bonus--chatgpt)
 - [Références](#références)
 
 # Introduction
@@ -72,7 +76,11 @@ On séparera ce cours en trois leçons d'une heure. La première leçon se consa
 
 Voici des exemples d'outils créés avec Python ou encore des possibilités.
 
-![Alt text](img/python-3d-smart-cart-plot-1.jpg)![Alt text](img/animated_volcano.gif)![Alt text](img/animated_gapminder.gif)![Alt text](img/getting_data_old_equipment.webp)![Alt text](img/pygame.jpeg)
+![Alt text](assets/python-3d-smart-cart-plot-1.jpg)
+![Alt text](assets/animated_volcano.gif)
+![Alt text](assets/animated_gapminder.gif)
+![Alt text](assets/getting_data_old_equipment.webp)
+![Alt text](assets/pygame.jpeg)
 
 # Les plans de leçons
 
@@ -153,7 +161,7 @@ Chaque séance d'une heure se concentre sur des concepts spécifiques et propose
 
 Voici une capture d'écran de Thonny avec un peu de code. Prenez quelques instants pour regarder l'interface et les différents éléments.
 
-![Thonny avec un peu de code](img/99_thonny_pv_nrt.png?raw=true "Thonny avec un peu de code")
+![Thonny avec un peu de code](assets/99_thonny_pv_nrt.png?raw=true "Thonny avec un peu de code")
 
 Vous reconnaissez probablement la formule ci-dessus soit la loi sur les gaz parfaits. Plus tard, nous allons utiliser cette formule pour faire des calculs simples.
 
@@ -161,7 +169,7 @@ Vous reconnaissez probablement la formule ci-dessus soit la loi sur les gaz parf
 
 Pour l'installation de Thonny, on doit tout d'abord le télécharger sur le site officiel : <https://thonny.org/>
 
-![Alt text](img/01a_download.gif)
+![Alt text](assets/01a_download.gif)
 
 Il n'est pas nécessaire d'être administrateur pour installer Thonny. Vous pouvez donc l'installer sur votre ordinateur personnel.
 
@@ -173,7 +181,7 @@ Vidéo montrant l'installation de Thonny
 
 Premier démarrage de Thonny
 
-![Alt text](img/99_thonny_premier_dem.png)
+![Alt text](assets/99_thonny_premier_dem.png)
 
 ### Tour d'horizon de Thonny - 10 minutes
 
@@ -181,7 +189,7 @@ Thonny est un environnement de travail qui est très simple à utiliser. Il est 
 
 Lorsque vous ouvrez Thonny, vous devriez voir une fenêtre qui ressemble à ceci :
 
-![Thonny avec un peu de code](img/99_thonny_pv_nrt.png?raw=true "Thonny avec un peu de code")
+![Thonny avec un peu de code](assets/99_thonny_pv_nrt.png?raw=true "Thonny avec un peu de code")
 
 Comme la majorité des applications Windows, on retrouve une barre de menu en haut de la fenêtre. Cette barre de menu contient les menus suivants :
 
@@ -613,7 +621,7 @@ else:
 
 > **Comparaison Excel** <br />
 > `=si(condition; valeur_si_vrai; valeur_si_faux)`<br />
-> ![Alt text](img/99_excel_if.png)<br />
+> ![Alt text](assets/99_excel_if.png)<br />
 
 **Seul le `if` est obligatoire**. On peut avoir plusieurs `elif` et un seul `else`. On peut aussi avoir seulement un `if` et un `else`.
 
@@ -834,7 +842,7 @@ La fonction `ideal_gas_law` prend en paramètre les variables `P`, `V`, `n` et `
 
 ## Les listes en Python
 
-![Alt text](img/liste_epicerie.jpg)
+![Alt text](assets/liste_epicerie.jpg)
 
 L'une des structures de données les plus fondamentales en Python est la liste, qui peut être un outil puissant pour stocker, organiser et manipuler des données. Dans cette partie, nous explorerons l'utilisation des listes en Python.
 
@@ -991,7 +999,7 @@ Dans cette leçon, nous allons apprendre à utiliser les boucles et réaliser de
 
 ## Les boucles
 
-![Boucle de contrôle PID (proportionnelle, intégrale et différentielle)](img/PID_loop.svg)
+![Boucle de contrôle PID (proportionnelle, intégrale et différentielle)](assets/PID_loop.svg)
 
 En programmation, il y a un concept qui s'appelle la répétition. Cela permet d'exécuter un bloc de code de manière répétée. 
 
@@ -1057,7 +1065,7 @@ plt.show()
 
 <details><summary>Cliquer pour voir le résultat</summary>
 
-![Alt text](img/matplotlib_graphique.png)
+![Alt text](assets/matplotlib_graphique.png)
 
 </details>
 
@@ -1232,7 +1240,7 @@ plt.show()
 
 Réponse : Il manque les importations de bibliothèques. Il ne faut pas oublier d'importer `matplotlib.pyplot` et `math`.
 
-![Alt text](img/matplotlib_demievie.png)
+![Alt text](assets/matplotlib_demievie.png)
 
 </details>
 
@@ -1269,7 +1277,7 @@ while True:
 
 ## Les graphiques avec `matplotlib`
 
-![Alt text](img/matplotlib_sin_anim.gif)
+![Alt text](assets/matplotlib_sin_anim.gif)
 
  Nous avons vu quelques exemples dans les sections précédentes où nous avons utilisé `matplotlib` pour générer des graphiques. Dans cette section, nous allons apprendre à utiliser la librairie `matplotlib` pour générer des graphiques.
 
@@ -1290,7 +1298,7 @@ plt.show()
 ---
 Voici le résultat attendu
 
-![Résultat attendu](img/matplotlib_prof_01.png)
+![Résultat attendu](assets/matplotlib_prof_01.png)
 
 ---
 
@@ -1319,7 +1327,7 @@ plt.ylabel("Axe des y")
 plt.show()
 ```
 
-![Alt text](img/matplotlib_titre_axes.png)
+![Alt text](assets/matplotlib_titre_axes.png)
 
 ---
 
@@ -1506,7 +1514,7 @@ plt.show()
 > 3. La fonction `linspace()` permet de générer un espace linéaire soit une séquence de nombres de 0 à 2$\pi$ avec 100 valeurs.
 > 4. La fonction `np.random.normal()` permet de générer des nombres aléatoires suivant une distribution normale. On peut spécifier la moyenne, l'écart-type de la distribution et le nombre de valeurs à générer.
 
-![Alt text](img/matplotlib_multiple_graph.png)
+![Alt text](assets/matplotlib_multiple_graph.png)
 
 </details>
 
@@ -1556,7 +1564,7 @@ plt.show()
 
 ```
 
-![Alt text](img/matplotlib_grid.png)
+![Alt text](assets/matplotlib_grid.png)
 
 ## Résumé de la leçon
 Dans cette leçon, nous avons appris à utiliser les boucles `for` et `while` ainsi que la librairie `matplotlib` pour générer des graphiques. Par la bande, nous avons aussi appris à utiliser des fonctions de la librairie `numpy` pour générer des données.
@@ -1574,11 +1582,50 @@ De plus, j'aimerais que l'on explore l'utilisation de ChatGPT pour nous aider à
 
 ---
 
-# Leçon 4 : À venir
-- TODO : Utiliser ChatGPT pour nous aider à faire du code
-- TODO : Lire un fichier local
-- TODO : Afficher les données pour qu'elles soient copiables dans Excel.
-- TODO : Enregistrer des données dans un fichier CSV et Excel
+# Leçon 4 : Manipulation de données
+
+## Objectifs
+- Apprendre à lire des fichiers locaux en utilisant Python.
+- Afficher des données de manière à faciliter leur copie vers Excel.
+- Enregistrer des données dans des fichiers au format CSV et Excel.
+
+## Lire des fichiers locaux
+Savoir lire dans un fichier est une compétence fondaementale en programmation. Cela permet de lire des données et de les manipuler dans un programme.
+
+Voici quelques raisons pour lesquelles il est important de savoir lire des fichiers :
+
+- **Accès aux Données** : Essentiel pour exploiter les données nécessaires aux analyses.
+- **Automatisation** : Permet le traitement automatisé de grandes quantités de données.
+- **Interdisciplinarité** : Facilite la collaboration et l'utilisation de données entre différents domaines.
+- **Reproductibilité** : Contribue à la reproductibilité des recherches en permettant la vérification des résultats.
+- **Adaptabilité** : Rend capable de gérer divers types de données et formats de fichiers.
+- **Exploitation des Ressources** : Ouvre l'accès à une vaste quantité de ressources éducatives et scientifiques.
+- **Économie de Ressources** : Économise le temps et les efforts, permettant de se concentrer sur l'analyse et l'innovation.
+
+### Lire un fichier texte
+Pour lire un fichier texte, on utilise la fonction `open()` avec le mode `r` pour lire. On peut ensuite utiliser la méthode `read()` pour lire le contenu du fichier.
+
+Voici un exemple permettant de lire de contenu d'un fichier texte :
+
+```python
+# Déclarer le nom du fichier
+nom_fichier = "fichier.txt"
+
+# Initialiser le contenu
+contenu = ""
+
+# Ouvrir le fichier en mode lecture
+with open(nom_fichier, "r") as fichier:
+    contenu = fichier.read()
+
+# Afficher le contenu
+print(contenu)
+```
+
+
+
+# Leçon bonus : ChatGPT
+- Utiliser ChatGPT pour nous aider à faire du code
 
 
 

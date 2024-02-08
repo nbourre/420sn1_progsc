@@ -6,5 +6,5 @@
 - [Qu'est-ce que la programmation?](notebooks/02_programme_informatique.ipynb)
 
 # Autres ressources
-- [Direct au but](notebooks/99_direct_au_but.md)
+- [Direct au but](notebooks/direct_au_but/readme.md)
 
