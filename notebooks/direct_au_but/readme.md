@@ -1628,7 +1628,6 @@ print(contenu)
 - Utiliser ChatGPT pour nous aider à faire du code
 
 
-
 ---
 
 # Références
