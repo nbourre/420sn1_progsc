@@ -44,7 +44,7 @@ Durée : 1 heure
 -   Introduction aux fonctions : définition, paramètres, valeurs de retour.
 -   Exercices pratiques pour créer et appeler des fonctions simples.
 
-### [Lien leçon 1](lecon_01.md)
+### [Lien leçon 1](./lecon_01/readme.md)
 
 ## Plan de leçon 2 : Contrôle de flux et les listes
 
@@ -56,7 +56,7 @@ Durée : 1 heure
 -   Exercices pratiques pour créer des programmes avec des structures de contrôle et des listes
 -   Introduction à l'utilisation de Thonny pour déboguer les erreurs.
 
-### [Lien leçon 2](lecon_02.md)
+### [Lien leçon 2](./lecon_02/readme.md)
 
 ## Plan de leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib
 
@@ -71,7 +71,7 @@ Durée : 1 heure
 
 Chaque séance d'une heure se concentre sur des concepts spécifiques et propose des exercices pratiques pour renforcer les compétences acquises. Les plans seront adaptés en fonction du niveau de familiarité des enseignants avec la programmation.
 
-### [Lien leçon 3](lecon_03.md)
+### [Lien leçon 3](./lecon_03/readme.md)
 
 ## Plan de leçon 4 : Manipulation de données
 

@@ -1,10 +1,6 @@
 # Leçon 3 : Les boucles et les graphiques
 
-TODO : Retirer les éléments d'une liste répondant à une condition
-
 Dans cette leçon, nous allons apprendre à utiliser les boucles et réaliser des graphiques de base en Python.
-
-TODO : Fix image
 
 ## Les boucles
 
