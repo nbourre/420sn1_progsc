@@ -1,4 +1,4 @@
-# Leçon 4 : Manipulation de données <!-- omit in toc -->
+# Leçon 4 : Manipulation de données et s'autoformer avec l'intelligence artificielle <!-- omit in toc -->
 
 ![alt text](<assets/DALL·E 2024-03-28 11.11.34.webp>)
 
@@ -28,6 +28,7 @@
 - Afficher des données de manière à faciliter leur copie vers Excel.
 - Enregistrer des données dans des fichiers au format CSV et Excel.
 - Afficher des graphiques pour visualiser des données.
+- Utiliser un outils d'intelligence artificielle pour s'autoformer.
 
 # Lire des fichiers locaux
 Savoir lire dans un fichier est une compétence fondamentale en programmation. Cela permet de lire des données et de les manipuler dans un programme.
@@ -293,9 +294,9 @@ Si tout se passe bien, vous devriez voir un graphique qui affiche les précipita
 ---
 
 # Leçon bonus : ChatGPT
-Dans cette leçon bonus, nous allons accélérez votre apprentissage en utilisant ChatGPT pour faire du code de base. En effet, ChatGPT est un modèle de langage génératif qui peut vous aider à écrire du code Python.
+Dans cette leçon bonus, nous allons accélérez votre apprentissage en utilisant ChatGPT pour faire du code de base et s'autoformer. En effet, ChatGPT est un modèle de langage génératif qui peut vous aider à écrire du code et à s'autoformer.
 
-C'est un bon adjoint pour vous aider à écrire du code, à résoudre des problèmes et à apprendre de nouvelles compétences.
+C'est un bon adjoint pour vous aider à programmer, à résoudre des problèmes et à apprendre de nouvelles compétences.
 
 Pour utiliser ChatGPT, vous pouvez utiliser le site [ChatGPT](https://chat.openai.com/).
 
