@@ -12,7 +12,9 @@
   - [Plan de leçon 3 : Les boucles, fonctions avancées et visualisation avec Matplotlib](#plan-de-leçon-3--les-boucles-fonctions-avancées-et-visualisation-avec-matplotlib)
     - [Lien leçon 3](#lien-leçon-3)
   - [Plan de leçon 4 : Manipulation de données](#plan-de-leçon-4--manipulation-de-données)
+    - [Lien leçon 4](#lien-leçon-4)
 - [Références](#références)
+
 
 # Introduction
 
@@ -75,7 +77,15 @@ Chaque séance d'une heure se concentre sur des concepts spécifiques et propose
 
 ## Plan de leçon 4 : Manipulation de données
 
-TODO : Compléter le plan de leçon 4
+Durée : 1 heure<
+
+- Apprendre à lire des fichiers locaux en utilisant Python.
+- Afficher des données de manière à faciliter leur copie vers Excel.
+- Enregistrer des données dans des fichiers au format CSV et Excel.
+- Afficher des graphiques pour visualiser des données.
+- Utiliser un outils d'intelligence artificielle pour s'autoformer.
+
+### [Lien leçon 4](./lecon_04/readme.md)
 
 ---
 
