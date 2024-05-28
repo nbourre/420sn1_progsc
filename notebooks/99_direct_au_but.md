@@ -35,6 +35,7 @@
   - [Les listes en Python](#les-listes-en-python)
     - [Qu'est-ce qu'une liste en Python ?](#quest-ce-quune-liste-en-python-)
     - [Afficher une liste](#afficher-une-liste)
+      - [Afficher une partie de liste](#afficher-une-partie-de-liste)
     - [Stocker des données scientifiques](#stocker-des-données-scientifiques)
     - [Manipuler des données](#manipuler-des-données)
       - [Ajouter et supprimer des éléments](#ajouter-et-supprimer-des-éléments)
@@ -861,6 +862,25 @@ Vous avez probablement remarqué que les index commencent à 0. Cela signifie qu
 > **Perle de culture : Pourquoi les index débutent par 0** <br />
 > Dans les années 60, les langages de programmation étaient écrits en assembleur. Les tableaux étaient stockés dans la mémoire de l'ordinateur (Ils le sont toujours.). Pour accéder à un  tableau, on utilisait l'adresse mémoire du tableau. L'adresse mémoire du premier élément était "**adresse_memoire + (index * taille_element)**". Les langages subséquents ont conservés cette convention et c'est pourquoi les index débutent par 0. <br />
 
+#### Afficher une partie de liste
+Une fonctionnalité intéressante avec les listes en Python est la manipulation partielle des listes. En effet, on peut afficher les *n* premiers éléments d'une liste en utilisant `print(ma_liste[:n])`. On peut aussi afficher les *n* derniers éléments d'une liste en utilisant `print(ma_liste[-n:])`.
+
+```python
+# Liste de valeurs de masse
+masses = [1.1, 2.2, 3.3, 4.4, 5.5]
+
+n = 3
+
+# Afficher les 3 premières valeurs
+print(masses[:n])
+
+# Afficher les 3 dernières valeurs
+print(masses[-n:])
+
+# Afficher les valeurs à partir de n
+print(masses[n:])
+```
+
 ### Stocker des données scientifiques
 
 En tant que personne de sciences, vous pouvez utiliser des listes pour stocker des données expérimentales, des résultats d'observations ou des séquences de mesures. Par exemple, si vous effectuez des mesures de la température et de la vitesse du vent à différents moments de la journée, vous pouvez stocker ces valeurs dans une liste :
@@ -956,6 +976,8 @@ Avec la librairie `numpy`, on peut avoir d'autres fonctions utiles :
 | :------: | :---------- | :------ |
 | `numpy.mean()` | Retourne la moyenne des valeurs de la liste | `numpy.mean(ma_liste)` |
 | `numpy.std()` | Retourne l'écart-type des valeurs de la liste | `numpy.std(ma_liste)` |
+
+
 
 ---
 
