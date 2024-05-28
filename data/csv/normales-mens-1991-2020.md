@@ -1,0 +1,1 @@
+https://www.donneesquebec.ca/recherche/dataset/normales-climatiques-mensuelles
